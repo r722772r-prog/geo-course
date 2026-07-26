@@ -5,7 +5,7 @@
 
 export const siteConfig = {
   name: "GEO 落地師培訓｜超直白行銷",
-  url: "https://geo-course.vercel.app", // TODO: 接上 Vercel 後改成實際網址
+  url: "https://course.chaozhibai.ai",
   lang: "zh-TW",
 
   seo: {
@@ -21,7 +21,7 @@ export const siteConfig = {
     name: "超直白行銷 GEO 落地師培訓",
     description:
       "超直白行銷開設的 GEO（生成式引擎優化）培訓課程，教學員讓自己或客戶的品牌在 ChatGPT、Gemini、Perplexity 等 AI 搜尋中被推薦。",
-    url: "https://geo-course.vercel.app",
+    url: "https://course.chaozhibai.ai",
     founder: {
       "@type": "Person",
       name: "超直白",

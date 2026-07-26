@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 // GEO 主站（顧問服務）網址 — 用於交叉導流
-const GEO_SITE_URL = "https://geo-site-nine.vercel.app";
+const GEO_SITE_URL = "https://chaozhibai.ai";
 
 // 報名表單與官方 LINE
 const FORM_URL =

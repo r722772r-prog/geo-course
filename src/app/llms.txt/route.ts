@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@/data/site";
 
-const GEO_SITE_URL = "https://geo-site-nine.vercel.app";
+const GEO_SITE_URL = "https://chaozhibai.ai";
 
 export function GET() {
   const lines = [
