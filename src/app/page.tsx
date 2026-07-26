@@ -69,7 +69,7 @@ export default function CourseHome() {
     "@type": "Course",
     name: "GEO 落地師培訓課程",
     description:
-      "超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教學員讓自己或客戶的品牌在 ChatGPT、Gemini、Perplexity 等 AI 搜尋中被推薦。分為一日實體班與年度陪跑計畫，零 SEO 基礎可上手。",
+      "超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教學員讓自己或客戶的品牌在 ChatGPT、Gemini、Perplexity 等 AI 搜尋中被推薦。一日實體班，零 SEO 基礎可上手。",
     provider: {
       "@type": "Organization",
       name: "超直白行銷",
@@ -195,7 +195,7 @@ export default function CourseHome() {
             <p className="text-base md:text-lg font-bold">
               GEO 落地師培訓是超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教學員讓自己或客戶的品牌在{" "}
               <span className="text-[#AE445A]">ChatGPT、Gemini、Perplexity</span>{" "}
-              等 AI 搜尋中被推薦。課程分為一日實體班與年度陪跑計畫，零 SEO 基礎可上手，每月於大台北地區開課。
+              等 AI 搜尋中被推薦。一日實體班，零 SEO 基礎可上手，每月於大台北地區開課。
             </p>
           </div>
 
@@ -231,14 +231,6 @@ export default function CourseHome() {
               自己品牌的 AI 能見度診斷、內容優化模板、回家隔天就能執行的行動清單。
             </p>
           </div>
-
-          {/* 年度陪跑 */}
-          <h2 className="text-2xl md:text-3xl font-black mb-6 text-[#1A1A1A]">
-            年度陪跑計畫
-          </h2>
-          <p className="text-base text-[#1A1A1A]/80 mb-14">
-            一日班之後想深入的學員，可加入年度陪跑：12 個月的實作指導，目標是做出你自己的「被 AI 推薦」成果，並具備承接企業 GEO 案的能力。詳細方案與費用於課堂說明，或透過官方 LINE 洽詢。
-          </p>
 
           {/* 講師 */}
           <h2 className="text-2xl md:text-3xl font-black mb-6 text-[#1A1A1A]">講師</h2>
