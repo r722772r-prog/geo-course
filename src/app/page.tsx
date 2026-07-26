@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "下一場什麼時候？",
-    a: "每月固定開課。加入官方 LINE，開課資訊第一時間通知。",
+    a: "下一場是 2026/8/22（六）台北場，地點在汐止遠雄 U-TOWN A 棟 14 樓，上課時間 AM 10:00 – PM 5:00。之後每月固定開課，加入官方 LINE 可第一時間收到開課通知。",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function CourseHome() {
     "@type": "Course",
     name: "GEO 落地師培訓課程",
     description:
-      "超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教學員讓自己或客戶的品牌在 ChatGPT、Gemini、Perplexity 等 AI 搜尋中被推薦。一日實體班，零 SEO 基礎可上手。",
+      "超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教學員讓自己或客戶的品牌在 ChatGPT、Claude、Gemini、Perplexity 與 Google AI 摘要等 AI 搜尋中被推薦。一日實體班，零 SEO 基礎可上手。",
     provider: {
       "@type": "Organization",
       name: "超直白行銷",
@@ -79,7 +79,7 @@ export default function CourseHome() {
       "@type": "Person",
       name: "白白",
       description:
-        "超直白行銷創辦人，13 年跨平台自媒體經驗，全平台累計 200 萬追蹤。",
+        "超直白行銷創辦人，13 年跨平台自媒體經驗，全平台累積 200 萬真實粉絲。",
     },
     hasCourseInstance: [
       {
@@ -193,8 +193,8 @@ export default function CourseHome() {
               黃金摘要
             </p>
             <p className="text-base md:text-lg font-bold">
-              GEO 落地師培訓是超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教學員讓自己或客戶的品牌在{" "}
-              <span className="text-[#AE445A]">ChatGPT、Gemini、Perplexity</span>{" "}
+              GEO 落地師培訓是超直白行銷開設的 GEO（生成式引擎優化）實戰課程，教你讓自己或客戶的品牌在{" "}
+              <span className="text-[#AE445A]">ChatGPT、Claude、Gemini、Perplexity 與 Google AI 摘要</span>{" "}
               等 AI 搜尋中被推薦。一日實體班，零 SEO 基礎可上手，每月於大台北地區開課。
             </p>
           </div>
@@ -236,7 +236,7 @@ export default function CourseHome() {
           <h2 className="text-2xl md:text-3xl font-black mb-6 text-[#1A1A1A]">講師</h2>
           <p className="text-base text-[#1A1A1A]/80 mb-14">
             <span className="font-black text-[#1A1A1A]">白白</span>
-            ，超直白行銷創辦人。13 年跨平台自媒體經驗，全平台累計 200 萬追蹤，曾在最高峰主動關閉 83 萬訂閱的 YouTube 頻道，全力投入 GEO 研究，並將普林斯頓 KDD 2024、Ahrefs 等國際 GEO 研究轉譯為台灣市場可執行的方法。
+            ，超直白行銷創辦人。13 年跨平台自媒體經驗，全平台累積 200 萬真實粉絲，專注研究 ChatGPT、Claude、Gemini、Perplexity 與 Google AI Overview 的推薦機制，並將普林斯頓 KDD 2024、Ahrefs 等國際 GEO 研究轉譯為台灣市場可執行的方法。
           </p>
 
           {/* FAQ */}

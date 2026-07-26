@@ -11,7 +11,7 @@ export const siteConfig = {
   seo: {
     title: "GEO落地師培訓課程｜超直白行銷・讓AI推薦你的品牌",
     description:
-      "GEO落地師一日實體班。超直白行銷開設的 GEO（生成式引擎優化）培訓課程，教你讓品牌被 ChatGPT、Gemini、Perplexity 推薦，零基礎可上手，每月大台北開課。",
+      "GEO落地師一日實體班。超直白行銷開設的 GEO（生成式引擎優化）培訓課程，教你讓品牌被 ChatGPT、Claude、Gemini、Perplexity 與 Google AI 摘要推薦，零基礎可上手，每月大台北開課。",
     keywords: ["GEO", "生成式引擎優化", "GEO落地師", "GEO課程", "AI行銷課程", "超直白", "落地師培訓", "AI推薦"],
   },
 
