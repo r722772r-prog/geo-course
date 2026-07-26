@@ -87,17 +87,15 @@ export default function CourseHome() {
         name: "GEO 落地師一日班",
         courseMode: "Onsite",
         courseWorkload: "P1D",
-        courseSchedule: {
-          "@type": "Schedule",
-          repeatFrequency: "P1M",
-          description: "每月固定開課，場次以官方 LINE 公告為準",
-        },
+        startDate: "2026-08-22T10:00:00+08:00",
+        endDate: "2026-08-22T17:00:00+08:00",
         location: {
           "@type": "Place",
-          name: "大台北地區",
+          name: "汐止遠雄 U-TOWN A 棟 14 樓",
           address: {
             "@type": "PostalAddress",
-            addressRegion: "台北",
+            addressRegion: "新北市",
+            addressLocality: "汐止區",
             addressCountry: "TW",
           },
         },
@@ -159,7 +157,7 @@ export default function CourseHome() {
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
           <div className="border-2 border-[#FF6B35] p-8 md:p-12">
             <div className="inline-block bg-[#FF6B35] text-white text-xs font-black tracking-widest px-3 py-1.5 mb-6">
-              每月開課・大台北實體班
+              8/22（六）台北場・汐止遠雄 U-TOWN
             </div>
             <h1 className="text-3xl md:text-5xl font-black mb-6 leading-snug">
               GEO 落地師一日班
@@ -206,8 +204,8 @@ export default function CourseHome() {
             GEO 落地師一日班
           </h2>
           <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
-            <Row label="下一場次" value="籌備中——加入官方 LINE，開課日期第一時間通知" highlight />
-            <Row label="上課形式" value="實體小班制，一整天" />
+            <Row label="下一場次" value="2026/8/22（六）台北場・汐止遠雄 U-TOWN A 棟 14 樓" highlight />
+            <Row label="上課時間" value="AM 10:00 – PM 5:00，實體小班制" />
             <Row label="費用" value="NT$ 3,000" highlight />
             <Row label="適合對象" value="上班族、自媒體經營者、有自己品牌或小生意的人、想學 AI 時代新技能者。不需要技術背景，不需要 SEO 基礎。" />
           </dl>
