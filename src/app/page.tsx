@@ -101,7 +101,7 @@ export default function CourseHome() {
         },
         offers: {
           "@type": "Offer",
-          price: "3000",
+          price: "3500",
           priceCurrency: "TWD",
           category: "一日實體班",
           url: siteConfig.url,
@@ -206,7 +206,7 @@ export default function CourseHome() {
           <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-8">
             <Row label="下一場次" value="2026/8/22（六）台北場・汐止遠雄 U-TOWN A 棟 14 樓" highlight />
             <Row label="上課時間" value="AM 10:00 – PM 5:00，實體小班制" />
-            <Row label="費用" value="NT$ 3,000" highlight />
+            <Row label="費用" value="NT$ 3,500" highlight />
             <Row label="適合對象" value="上班族、自媒體經營者、有自己品牌或小生意的人、想學 AI 時代新技能者。不需要技術背景，不需要 SEO 基礎。" />
           </dl>
 
