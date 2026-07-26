@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 // GEO 主站（顧問服務）網址 — 用於交叉導流
 const GEO_SITE_URL = "https://chaozhibai.ai";
 
-// 報名表單與官方 LINE
+// 報名表單（2026 一日班新表單，短網址 forms.gle/7qq6DJtozxPfaRuD8）與官方 LINE
 const FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSe6Ji_Z3PWWu5JqOccOhIx93NFu1gWYPLzfcWMUVmmE90alPg/viewform";
+  "https://docs.google.com/forms/d/e/1FAIpQLSdMXzSYfJuriG3ntIxkmfUMjIIbzmW2ZOVON9vKQYluJ5nPWg/viewform";
 const LINE_URL = "https://lin.ee/v1T1Lwz"; // 官方 LINE OA 加好友
 
 const faqs = [
