@@ -18,7 +18,7 @@ export default function TermsPage() {
         <ul className="list-none p-0 space-y-3">
           <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>報名以完成表單填寫並依通知完成繳費為準；名額以繳費順序保留。</span></li>
           <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>課程費用以報名當時網站公告為準。</span></li>
-          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>退費、轉場次與名額轉讓規則，詳見<a href="/refund" className="text-[#AE445A] underline">退費說明</a>（重點：課程當日起不予退費）。</span></li>
+          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>完成報名繳費後恕不退費，無法出席可申請延期一次，詳見<a href="/refund" className="text-[#AE445A] underline">退費說明</a>。</span></li>
         </ul>
       </Section>
 
