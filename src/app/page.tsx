@@ -101,6 +101,10 @@ const faqs = [
     q: "要帶什麼東西上課嗎？",
     a: "帶一台能上網的筆電即可。現場實測環節會直接用你的品牌（或你想操作的題目）做查測。",
   },
+  {
+    q: "報名後可以退費嗎？",
+    a: "可以，依申請時間點而定：開課日前第 8 天（含）以前全額退費；開課前 7 天內退還 50%；課程當日起（含已開始上課）不予退費。無法出席也可在開課前 3 天申請轉場次或轉讓名額，完整規則見網站的「退費說明」頁。",
+  },
 ];
 
 export default function CourseHome() {
@@ -417,6 +421,11 @@ export default function CourseHome() {
         >
           超直白行銷 GEO 顧問服務（企業 GEO 健檢・佈局建置）→
         </a>
+        <div className="mt-8 flex justify-center gap-6 text-xs text-[#1A1A1A]/60">
+          <a href="/refund" className="hover:text-[#AE445A] underline-offset-4 hover:underline">退費說明</a>
+          <a href="/privacy" className="hover:text-[#AE445A] underline-offset-4 hover:underline">隱私權政策</a>
+          <a href="/terms" className="hover:text-[#AE445A] underline-offset-4 hover:underline">服務條款</a>
+        </div>
         <p className="mt-6 text-xs font-sans tracking-widest uppercase text-[#1A1A1A]/40">
           {siteConfig.footer.copyright}
         </p>

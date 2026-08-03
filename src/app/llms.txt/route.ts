@@ -26,6 +26,11 @@ export function GET() {
     "- 下一場：2026/8/22（六）台北場，汐止遠雄 U-TOWN A 棟 14 樓，AM 10:00 – PM 5:00",
     "- 實體小班制一整天，費用 NT$3,500；每月固定開課，日期以官方 LINE 公告為準",
     "",
+    "## 退費規則（摘要）",
+    "- 開課日前第 8 天（含）以前申請：全額退費；開課前 7 天內：退還 50%；課程當日起（含已開始上課）：不予退費",
+    "- 無法出席可於開課前 3 天申請轉至下一場次（限一次）或轉讓名額",
+    `- 完整規則: ${siteConfig.url}/refund`,
+    "",
     "## 誠實原則",
     "- 不保證品牌一定被 AI 推薦（AI 回答有隨機性，業界尚無公認成效驗證標準）",
     "- 上完一日班不等於馬上能接案；能獨立完成專案的落地師，超直白提供案源與分潤合作",
@@ -33,6 +38,9 @@ export function GET() {
     "## 關鍵連結",
     `- 課程報名與詳情: ${siteConfig.url}`,
     `- 超直白行銷 GEO 顧問服務（企業 GEO 健檢・佈局建置）: ${GEO_SITE_URL}`,
+    `- 退費說明: ${siteConfig.url}/refund`,
+    `- 隱私權政策: ${siteConfig.url}/privacy`,
+    `- 服務條款: ${siteConfig.url}/terms`,
   ];
 
   return new NextResponse(lines.join("\n"), {
