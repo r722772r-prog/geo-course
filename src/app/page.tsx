@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import CourseFilms from "@/components/CourseFilms";
 import { siteConfig } from "@/data/site";
 import { audiences, courseTitle, days, faqs, getPricing, lineUrl, registrationUrl, refundRules } from "@/data/course";
 export const dynamic = "force-dynamic";
@@ -20,6 +21,7 @@ export default function CourseHome() {
         <div className="intro-copy"><p>AI影片讓你眼花撩亂嗎？想要不露臉也能經營自媒體，想幫你的產品、你的事業做行銷嗎？</p><p>很多人不缺產品、不缺故事，缺的是把它們變成一支好影片的方法。我從一個完全不會AI影像製作的新手，到學會 AI 影片製作，花了 30 萬、720 小時，鑽研了一個月的 AI 影片工作流。</p><p>這堂課，就是把我學到的敘事方法和製作流程，整理成最簡單、你也能用在生意上的實作課。不用先搞懂一大堆 AI 工具，你就是自己的行銷廣告公司。</p></div>
       </Section>
       <Section title="帶著題目來，帶著自己的作品回去"><div className="outcome"><strong>60<span>秒</span></strong><div><h3>一支專屬行銷影片</h3><p>從選題、腳本、角色與畫面生成到剪輯成片，以你的商品或服務作為實作題目，週日完成作品並分享成果。</p></div></div></Section>
+      <CourseFilms />
       <Section title="這堂課適合誰"><ol className="audiences">{audiences.map((text,i)=><li key={text}><span className="number">0{i+1}</span><p>{text}</p></li>)}</ol></Section>
       <Section id="modules" title="五天，一步一步完成影片"><div className="modules">{days.map(([date,title,body],i)=><article key={date}><span className="eyebrow">DAY 0{i+1} · {date}</span><h3>{title}</h3><p>{body}</p></article>)}</div></Section>
       <section id="instructor" className="instructor"><div className="instructor-inner"><Image src="/instructor.png" alt="超直白行銷創辦人白白" width={683} height={911} className="portrait" /><div><p className="eyebrow">主講老師</p><h2>超直白 白白</h2><h3>用 AI 把影片變成生意的自媒體經營者</h3><p className="teacher-tags">超直白行銷創辦人｜店家代操與社群經營實戰｜全網 3 億自然流量、200 萬粉絲</p><p>從圖文到影音，累積 13 年跨平台自媒體經驗。2025 年開始幫店家與品牌把影片變成生意，投入短影音、AI 行銷影片、社群經營與店家代操。</p></div></div></section>
