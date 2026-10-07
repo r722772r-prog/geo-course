@@ -3,7 +3,7 @@ export const registrationUrl = "https://chaozhibai-ai-course.yuyanshie.chatgpt.s
 export const lineUrl = "https://line.me/R/ti/p/@740meybx";
 export const refundRules = [
   ["2026/10/21（含）以前", "退還實際已付金額的 100%"],
-  ["2026/10/22–10/28", "退還實際已付金額的 50%，或保留下一期"],
+  ["2026/10/22–10/28", "退還實際已付金額的 50%"],
   ["2026/10/29 起", "不退費，可轉讓"],
 ];
 export function getPricing(now = new Date()) {
