@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/data/site";
 
 export default function LegalShell({
@@ -13,12 +14,12 @@ export default function LegalShell({
     <div className="min-h-screen bg-[#F8F5F2] text-[#1A1A1A] font-serif">
       <div className="h-[3px] bg-[#AE445A]" />
       <nav className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" className="text-sm font-bold text-[#1A1A1A] hover:text-[#AE445A]">
-          超直白行銷｜GEO 落地師培訓
-        </a>
-        <a href="/" className="text-xs tracking-widest text-[#1A1A1A]/60 hover:text-[#AE445A] transition-colors">
+        <Link href="/" className="text-sm font-bold text-[#1A1A1A] hover:text-[#AE445A]">
+          超直白行銷｜AI 行銷影片實戰班
+        </Link>
+        <Link href="/" className="text-xs tracking-widest text-[#1A1A1A]/60 hover:text-[#AE445A] transition-colors">
           ← 回課程首頁
-        </a>
+        </Link>
       </nav>
 
       <main className="max-w-3xl mx-auto px-6 py-16">
@@ -49,3 +50,5 @@ export function Section({ heading, children }: { heading: string; children: Reac
     </section>
   );
 }
+
+

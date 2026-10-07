@@ -1,41 +1,8 @@
-// ============================================================
-// 🔧 課程站基本設定 — 改這裡就能更新 SEO、JSON-LD、Footer
-// ⚠️ 上線接上 Vercel 後，把 url 換成實際網址
-// ============================================================
-
+import { courseTitle } from "./course";
 export const siteConfig = {
-  name: "GEO 落地師培訓｜超直白行銷",
-  url: "https://course.chaozhibai.ai",
-  lang: "zh-TW",
-
-  seo: {
-    title: "GEO落地師培訓課程｜超直白行銷・讓AI推薦你的品牌",
-    description:
-      "GEO落地師一日實體班。超直白行銷開設的 GEO（生成式引擎優化）培訓課程，教你讓品牌被 ChatGPT、Claude、Gemini、Perplexity 與 Google AI 摘要推薦，零基礎可上手，每月大台北開課。",
-    keywords: ["GEO", "生成式引擎優化", "GEO落地師", "GEO課程", "AI行銷課程", "超直白", "落地師培訓", "AI推薦"],
-  },
-
-  jsonLd: {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    name: "超直白行銷 GEO 落地師培訓",
-    description:
-      "超直白行銷開設的 GEO（生成式引擎優化）培訓課程，教學員讓自己或客戶的品牌在 ChatGPT、Gemini、Perplexity 等 AI 搜尋中被推薦。",
-    url: "https://course.chaozhibai.ai",
-    founder: {
-      "@type": "Person",
-      name: "超直白",
-      alternateName: "白白",
-    },
-  },
-
-  og: {
-    locale: "zh_TW",
-    type: "website" as const,
-    image: "/og-default.png",
-  },
-
-  footer: {
-    copyright: "© 2026 超直白行銷 GEO 落地師培訓. All Rights Reserved.",
-  },
+  name: "超直白行銷｜AI 行銷影片實戰班", url: "https://course.chaozhibai.ai", lang: "zh-TW",
+  seo: { title: courseTitle, description: "超直白 白白主講，2026/11/4–11/8 新北汐止五天實體實作，限 20 位。從選題、腳本、畫面生成到剪輯，完成一支 60 秒專屬行銷影片。", keywords: ["AI 行銷影片實戰班", "AI 影片課程", "AI 影片製作", "超直白", "白白", "新北汐止"] },
+  jsonLd: { "@context": "https://schema.org", "@type": "EducationalOrganization", name: "超直白行銷", url: "https://course.chaozhibai.ai", founder: { "@type": "Person", name: "超直白 白白" } },
+  og: { locale: "zh_TW", type: "website" as const, image: "/instructor.png" },
+  footer: { copyright: "© 2026 超直白行銷股份有限公司" },
 };

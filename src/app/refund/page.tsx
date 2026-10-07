@@ -1,51 +1,11 @@
 import type { Metadata } from "next";
 import LegalShell, { Section } from "@/components/LegalShell";
-
-export const metadata: Metadata = {
-  title: "退費說明｜GEO 落地師培訓・超直白行銷",
-  description:
-    "GEO 落地師一日班退費規則：完成報名繳費後恕不退費；無法出席可於開課日前 3 天申請延期至下一場次（以一次為限）。若課程由主辦方取消，全額退費。",
-};
-
-export default function RefundPage() {
-  return (
-    <LegalShell title="退費說明" updated="2026 年 7 月 28 日">
-      <Section heading="一、退費原則">
-        <p>
-          完成報名並繳費後，<span className="font-black text-[#AE445A]">恕不接受退費</span>。本課程為小班制實體課，名額於繳費後即為你保留；若確定無法出席，請改以下方「延期」方式處理。
-        </p>
-      </Section>
-
-      <Section heading="二、無法出席：申請延期">
-        <ul className="list-none p-0 space-y-3">
-          <li className="flex gap-3">
-            <span className="text-[#AE445A] font-black shrink-0">▸</span>
-            <span>於<span className="font-black">開課日前 3 天（含）以前</span>透過官方 LINE 告知，可將名額<span className="font-black">延期至下一場次</span>，以<span className="font-black">一次</span>為限。</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-[#AE445A] font-black shrink-0">▸</span>
-            <span>開課日前 3 天內或課程當日未出席，恕無法延期或退費，視同放棄名額。</span>
-          </li>
-        </ul>
-      </Section>
-
-      <Section heading="三、主辦方取消或變更">
-        <p>
-          若因不可抗力（天災、疫情、場地因素等）或報名人數不足，由超直白行銷取消課程，已報名學員可選擇<span className="font-black">全額退費</span>；若為日期變更，可選擇<span className="font-black">保留名額至新場次</span>或全額退費。
-        </p>
-      </Section>
-
-      <Section heading="四、申請方式">
-        <p>
-          延期或主辦方取消之退費申請，請透過官方 LINE（<a href="https://lin.ee/v1T1Lwz" target="_blank" rel="noopener noreferrer" className="text-[#AE445A] underline">加入好友</a>）或來信 <a href="mailto:chaozhibai.ai@gmail.com" className="text-[#AE445A] underline">chaozhibai.ai@gmail.com</a>，註明報名姓名與場次。主辦方取消之退費以原付款方式退回，於 14 個工作天內完成。
-        </p>
-      </Section>
-
-      <Section heading="五、其他">
-        <p>
-          本說明適用於「GEO 落地師一日班」實體課程。規則如有調整，將公告於本頁並註明更新日期；已完成報名者，適用報名當時之規則。未盡事宜，依中華民國相關法令辦理。
-        </p>
-      </Section>
-    </LegalShell>
-  );
-}
+import { refundRules } from "@/data/course";
+export const metadata: Metadata = { title:"退費說明｜AI 行銷影片實戰班", description:"2026/10/21（含）以前全退、10/22–10/28 退 50% 或保留下一期、10/29 起不退可轉讓。", alternates:{canonical:"https://course.chaozhibai.ai/refund"} };
+export default function RefundPage() { return <LegalShell title="退費說明" updated="2026 年 10 月 7 日">
+<p>適用 2026/11/4–11/8 AI 行銷影片實戰班。早鳥全款、原價全款、訂金及訂金補足尾款，均依下列申請時間，以實際已付金額計算。</p>
+<Section heading="一、退費時間"><div className="table-scroll"><table><thead><tr><th>申請時間</th><th>退費方式</th></tr></thead><tbody>{refundRules.map(([date,rule])=><tr key={date}><th>{date}</th><td>{rule}</td></tr>)}</tbody></table></div><p>時間以台灣時間為準；10/21 與 10/28 當日均包含在各該期間。</p></Section>
+<Section heading="二、退款計算"><p>已付訂金 NT$5,000：全退 NT$5,000；退 50% 為 NT$2,500。</p><p>早鳥全款 NT$14,800：全退 NT$14,800；退 50% 為 NT$7,400。</p><p>訂金方案已補足尾款、實付 NT$16,800：全退 NT$16,800；退 50% 為 NT$8,400。</p><p>原價全款 NT$19,800：全退 NT$19,800；退 50% 為 NT$9,900。訂金抵扣額不作為退款計算基礎。</p></Section>
+<Section heading="三、申請方式"><p>請來信 <a href="mailto:chaozhibai.ai@gmail.com">chaozhibai.ai@gmail.com</a>，提供姓名、付款時填寫的手機號碼及申請事項。轉讓或保留下一期也請聯繫主辦辦理。</p></Section>
+<Section heading="四、主辦取消課程"><p>若由主辦取消課程，退還實際已付課程費用。</p></Section>
+</LegalShell>; }

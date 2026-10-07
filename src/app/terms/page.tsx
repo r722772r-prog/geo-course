@@ -1,56 +1,10 @@
 import type { Metadata } from "next";
 import LegalShell, { Section } from "@/components/LegalShell";
-
-export const metadata: Metadata = {
-  title: "服務條款｜GEO 落地師培訓・超直白行銷",
-  description:
-    "超直白行銷 GEO 落地師培訓服務條款：課程報名與付款、退費規則、智慧財產權、課程成效免責聲明與其他權利義務說明。",
-};
-
-export default function TermsPage() {
-  return (
-    <LegalShell title="服務條款" updated="2026 年 7 月 28 日">
-      <p>
-        歡迎使用本網站（course.chaozhibai.ai）並報名超直白行銷股份有限公司（以下稱「本公司」）開設的「GEO 落地師一日班」課程。完成報名即表示你已閱讀、理解並同意本條款。
-      </p>
-
-      <Section heading="一、課程報名與付款">
-        <ul className="list-none p-0 space-y-3">
-          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>報名以完成表單填寫並依通知完成繳費為準；名額以繳費順序保留。</span></li>
-          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>課程費用以報名當時網站公告為準。</span></li>
-          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>完成報名繳費後恕不退費，無法出席可申請延期一次，詳見<a href="/refund" className="text-[#AE445A] underline">退費說明</a>。</span></li>
-        </ul>
-      </Section>
-
-      <Section heading="二、課程內容與成效聲明">
-        <p>
-          本課程教授經國際研究驗證的 GEO（生成式引擎優化）方法與實作。惟 AI 模型的回答具隨機性，業界亦無公認的成效驗證標準，<span className="font-black">本公司不保證上課後你的品牌必然被任何 AI 推薦</span>——任何做出此類保證的課程，都值得你警惕。課程提供的是方法、模板與查測工具，成效取決於後續執行。
-        </p>
-      </Section>
-
-      <Section heading="三、智慧財產權">
-        <p>
-          課程講義、模板、簡報與本網站內容之著作權均屬本公司所有。學員可於個人或自身企業用途內使用課程模板；未經書面同意，不得將課程內容重製、公開傳播、轉售或用於開設同類課程。
-        </p>
-      </Section>
-
-      <Section heading="四、學員行為">
-        <p>
-          請勿於課程中錄影、錄音或直播（拍照留念以講師現場說明為準）；請尊重其他學員的隱私與品牌資訊。嚴重影響課程進行者，本公司得請其離場且不予退費。
-        </p>
-      </Section>
-
-      <Section heading="五、個人資料">
-        <p>
-          個人資料之蒐集與使用，依<a href="/privacy" className="text-[#AE445A] underline">隱私權政策</a>辦理。
-        </p>
-      </Section>
-
-      <Section heading="六、條款修訂與準據法">
-        <p>
-          本條款如有修訂，將公告於本頁並更新日期；已完成報名者，適用報名當時之條款。本條款依中華民國法律解釋適用，如有爭議，雙方同意先誠信協商；協商不成時，以臺灣新北地方法院為第一審管轄法院。
-        </p>
-      </Section>
-    </LegalShell>
-  );
-}
+export const metadata: Metadata = {title:"服務條款｜AI 行銷影片實戰班",description:"AI 行銷影片實戰班報名、付款與課程使用說明。",alternates:{canonical:"https://course.chaozhibai.ai/terms"}};
+export default function TermsPage() { return <LegalShell title="服務條款" updated="2026 年 10 月 7 日">
+<p>本課程由超直白行銷股份有限公司提供。</p>
+<Section heading="一、報名與付款"><p>請先填寫報名表，再透過完成頁提供的藍新金流連結付款。付款頁請填寫與報名表相同的姓名與手機，方便核對。主辦於付款後 1 個工作天內核對並寄出確認通知；填表本身不是正式報名確認。</p><p>費用依當期公告與所選方案辦理。AI 工具積分另由學員自購，預估約 NT$1,500，依練習量增減。</p><p>取消、轉讓及退費依<a href="/refund" className="underline">退費說明</a>辦理。</p></Section>
+<Section heading="二、學習與作品"><p>本課程以技能學習與作品實作為主，不保證接案、訂單或收入。學員應自備筆電，並使用有權使用的圖片、影音及其他素材；AI 工具產出內容的使用，應遵循該工具的授權條件。</p></Section>
+<Section heading="三、課程內容與隱私"><p>課程講義、模板與簡報不得未經授權轉售或公開散布。請尊重其他學員的作品、個人資料與品牌資訊；作品或肖像用於招生宣傳，須另取得本人同意。</p></Section>
+<Section heading="四、聯絡與個人資料"><p>報名服務窗口：<a href="mailto:chaozhibai.ai@gmail.com">chaozhibai.ai@gmail.com</a>。資料蒐集與使用請參閱<a href="/privacy" className="underline">隱私權政策</a>。</p></Section>
+</LegalShell>; }
