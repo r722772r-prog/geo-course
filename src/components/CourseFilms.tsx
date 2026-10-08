@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 const films = [
   { slug: 'fashion-in-motion', title: '時尚穿搭變化', duration: '0:57', width: 606, height: 1080, description: '看服飾、人物與場景如何搭配，呈現不同造型與商品細節。' },
-  { slug: 'future-delivery', title: '未來城市配送', duration: '0:42', width: 1920, height: 1080, description: '看商品如何融入故事場景，透過角色、光影與節奏建立品牌氛圍。' },
 ];
 const mediaBase = 'https://chaozhibai.ai/portfolio-videos/';
 
@@ -32,7 +31,7 @@ export default function CourseFilms() {
         </div>
         <div className="course-film-copy"><h3>{film.title}</h3><p>{film.description}</p></div>
       </article>)}
-    </div>
+    </div><div className="practice-flow"><h3>從商品到影片，課堂這樣練習</h3><p>以下為實作流程示意，非學員成果。</p><ol><li><strong>腳本</strong><span>整理商品特色與影片想說的事</span></li><li><strong>分鏡</strong><span>安排每個畫面與故事順序</span></li><li><strong>素材</strong><span>生成角色、場景與影片畫面</span></li><li><strong>成片</strong><span>剪輯素材，調整節奏與字幕</span></li></ol></div>
     <p className="note">以上為合作團隊提供的作品，供製作風格參考，非本課程學員成果或五天課程成品保證；畫面品牌不代表超直白行銷的直接合作客戶。</p>
   </section>;
 }
