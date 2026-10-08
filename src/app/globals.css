@@ -132,3 +132,18 @@ tbody th { font-weight:700; }
 .course-mascot{position:fixed;right:20px;bottom:20px;width:214px;z-index:55;pointer-events:none}.mascot-figure{display:block;width:100px;height:150px;object-fit:contain;margin-left:auto;margin-right:18px}.mascot-panel{position:relative;background:#f8f5f2;border:1px solid #d9b5bd;border-radius:14px;padding:18px;box-shadow:0 6px 24px #29262626;pointer-events:auto}.mascot-panel p{font-size:17px;line-height:1.6;color:#873348;font-weight:700;margin:0 0 12px}.mascot-panel .cta{display:block;text-align:center;font-size:17px;padding:12px}.mascot-close{position:absolute;right:6px;top:4px;width:32px;height:32px;background:transparent;border:0;color:#873348;font-size:25px;cursor:pointer}.mascot-reopen{pointer-events:auto;background:#ae445a;color:#fff;border:0;border-radius:24px;padding:14px 20px;font-size:17px;cursor:pointer;float:right}.mascot-close:focus-visible,.mascot-reopen:focus-visible{outline:3px solid #ae445a;outline-offset:3px}.mobile-mascot{display:none}@media(prefers-reduced-motion:no-preference){.mascot-figure{animation:course-mascot-float 4s ease-in-out infinite}@keyframes course-mascot-float{50%{transform:translateY(-4px)}}}@media(max-width:700px){.course-mascot{display:none}.mobile-register .cta{gap:8px;padding:3px 8px}.mobile-mascot{display:block;width:32px;height:48px;object-fit:contain;flex-shrink:0}}
 /* Mobile uses the same dismissible registration panel as desktop. */
 @media(max-width:700px){.course-mascot{display:block;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));width:176px;max-width:calc(100vw - 24px)}.mascot-figure{width:70px;height:105px;margin-right:18px}.mascot-panel{padding:14px}.mascot-panel p{font-size:15px;line-height:1.55;padding-right:18px;margin-bottom:10px}.mascot-panel .cta{font-size:17px;padding:11px 8px;min-height:44px}.mascot-close{top:-14px;right:-4px;width:44px;height:44px;background:#f8f5f2;border:1px solid #d9b5bd;border-radius:50%}.mascot-reopen{font-size:15px;min-height:44px;padding:12px 16px}.course-footer{padding-bottom:85px}}
+
+.hero-phrase{font-weight:inherit;display:inline}
+@media(max-width:700px){
+.course-hero{padding:20px 16px 28px}
+.hero-frame{padding:24px 16px;gap:24px}
+.hero-content .eyebrow{margin-bottom:12px;font-size:11px}
+.hero-content>p:not([class]){font-size:15px;line-height:1.7}
+.hero-frame h1{font-size:clamp(27px,7.5vw,34px);line-height:1.4;margin:18px 0;text-wrap:wrap;letter-spacing:-.02em}
+.hero-frame h1 span{font-size:clamp(21px,5.6vw,25px);line-height:1.5;margin-top:10px;letter-spacing:0}
+.hero-phrase{display:block;white-space:nowrap}
+.hero-content .hero-description{font-size:17px;line-height:1.8}
+.hero-content .hero-price{font-size:17px;line-height:1.8;margin:20px 0}
+.hero-content>.cta{display:block;width:100%;padding:14px 10px;font-size:17px}
+.hero-content .hero-more{display:block;text-align:center;margin-top:4px;padding:12px;font-size:16px}
+}
