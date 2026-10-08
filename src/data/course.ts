@@ -1,5 +1,5 @@
 export const courseTitle = "AI 行銷影片實戰班｜五天帶你做出一支專屬行銷影片";
-export const registrationUrl = "https://chaozhibai-ai-course.yuyanshie.chatgpt.site/#registration";
+export const registrationUrl = "https://chaozhibai-ai-course.yuyanshie.chatgpt.site/#registration-form";
 export const lineUrl = "https://line.me/R/ti/p/@740meybx";
 export const refundRules = [
   ["2026/10/21（含）以前", "退還實際已付金額的 100%"],

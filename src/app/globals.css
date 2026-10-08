@@ -11,7 +11,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-serif: "Noto Serif TC", serif;
 }
@@ -19,7 +19,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -147,3 +147,27 @@ tbody th { font-weight:700; }
 .hero-content>.cta{display:block;width:100%;padding:14px 10px;font-size:17px}
 .hero-content .hero-more{display:block;text-align:center;margin-top:4px;padding:12px;font-size:16px}
 }
+
+/* Shared brand controls; course headings retain their editorial serif style. */
+.brand,.course-nav,.cta,button,.course-footer{font-family:var(--font-sans)}
+.course-nav{max-width:1200px;padding:20px 24px;gap:22px}
+.course-nav .brand{font-size:24px;font-weight:900}
+.course-nav nav{font-size:17px;font-weight:700;gap:20px}
+.course-nav>.cta{font-size:17px;min-height:44px}
+.course-menu-toggle{display:none;min-height:44px;padding:8px 12px;border:1px solid #ae445a;border-radius:5px;background:transparent;color:#96394d;font-weight:700;cursor:pointer}
+button:focus-visible{outline:3px solid #ae445a;outline-offset:4px}
+.cta{border-radius:5px;font-size:18px}
+.registration-hint{font-size:16px!important;line-height:1.8!important;margin:20px 0;color:#615a56;max-width:680px}
+.course-hero .registration-hint{color:#dedbd8}
+.course-section .note,.course-film-copy p,.course-footer{font-size:16px}
+.course-footer a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:1000px){
+  .course-nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;padding:14px 20px}
+  .course-nav .brand{font-size:22px}
+  .course-nav>.cta{grid-column:2;grid-row:1;padding:10px 12px;font-size:15px}
+  .course-menu-toggle{display:block;grid-column:3;grid-row:1;font-size:15px}
+  .course-nav nav{display:none;grid-column:1/-1;grid-row:2;width:100%;border-top:1px solid #d8d0ca;padding-top:12px}
+  .course-nav nav[data-open=true]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+  .course-nav nav>a:not(.cta){font-size:17px;justify-content:flex-start;white-space:normal}
+}
+@media(max-width:360px){.course-nav{padding:12px;gap:8px}.course-nav .brand{font-size:20px}}

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalShell title="隱私權政策" updated="2026 年 10 月 7 日">
+    <LegalShell title="隱私權政策" updated="2026 年 10 月 8 日">
       <p>
         超直白行銷股份有限公司（以下稱「本公司」）重視你的個人資料保護。本政策說明本網站（course.chaozhibai.ai）與課程報名流程中，我們如何蒐集、使用與保護你的資料。
       </p>
 
       <Section heading="一、我們蒐集什麼資料">
         <ul className="list-none p-0 space-y-3">
-          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span><span className="font-black">課程報名資料</span>：你透過報名網站提供的姓名、手機、Email、你的生意／想拍什麼及付款方案。</span></li>
+          <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span><span className="font-black">課程報名資料</span>：你透過報名網站提供的姓名、手機、Email、你的生意／想拍什麼及付款方案，以及登記時間與款項核對紀錄。請勿在報名表填寫卡號或完整銀行帳號。</span></li>
           <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span><span className="font-black">聯繫紀錄</span>：你透過官方 LINE 或 Email 與我們聯繫時的對話內容。</span></li>
           <li className="flex gap-3"><span className="text-[#AE445A] font-black shrink-0">▸</span><span>本網站本身<span className="font-black">不設置會員系統、不主動投放追蹤 Cookie</span>；網站託管服務（Vercel）可能產生必要的技術性紀錄（如伺服器日誌）。</span></li>
         </ul>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
 
       <Section heading="三、第三方服務">
         <p>
-          本課程介紹站連至獨立報名網站；付款使用藍新金流，聯繫使用 LINE 官方帳號與 Email，網站託管使用 Vercel。你於各該平台提供的資料，同時受其隱私權政策規範。
+          課程介紹站由 Vercel 託管，並連至超直白的獨立報名網站。報名資料由 OpenAI Sites 及 Cloudflare 處理與儲存；報名通知透過 Google Apps Script 與 Google 郵件服務處理姓名、Email、登記編號及方案。付款資料由藍新金流頁面蒐集；聯繫另使用 LINE 官方帳號與 Email。相關服務可能於境外處理資料，資料限本公司及履行上述目的所必要的受託服務者使用。你於各該平台提供的資料，同時受其隱私權政策規範。
         </p>
       </Section>
 
