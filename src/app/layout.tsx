@@ -1,3 +1,4 @@
+import MediaProtection from "@/components/MediaProtection";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { siteConfig } from "@/data/site";
@@ -55,7 +56,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteConfig.jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">{children}<MediaProtection /></body>
     </html>
   );
 }

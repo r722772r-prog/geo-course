@@ -171,3 +171,6 @@ button:focus-visible{outline:3px solid #ae445a;outline-offset:4px}
   .course-nav nav>a:not(.cta){font-size:17px;justify-content:flex-start;white-space:normal}
 }
 @media(max-width:360px){.course-nav{padding:12px;gap:8px}.course-nav .brand{font-size:20px}}
+
+/* Discourage media saving; preserve text selection and playback. */
+img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }

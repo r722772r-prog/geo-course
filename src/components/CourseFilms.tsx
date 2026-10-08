@@ -16,11 +16,11 @@ export default function CourseFilms() {
     <div className="course-films">
       {films.map(film => <article key={film.slug} className="course-film-card">
         <div className="course-film-screen">
-          {active === film.slug ? <video
+          {active === film.slug ? <video controlsList="nodownload"
             src={`${mediaBase}${film.slug}.mp4`} poster={`${mediaBase}${film.slug}.jpg`}
             controls autoPlay playsInline preload="none" width={film.width} height={film.height}
             aria-label={`${film.title}影片播放器`}
-          >你的瀏覽器不支援影片播放。<a href={`${mediaBase}${film.slug}.mp4`}>開啟影片</a></video>
+          >你的瀏覽器不支援影片播放。</video>
             : <button type="button" onClick={() => setActive(film.slug)} aria-label={`播放${film.title}，片長${film.duration}`}>
               {/* Preserve the original framing; external poster is already optimized. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
