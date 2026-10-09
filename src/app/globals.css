@@ -59,7 +59,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #AE445A; outline-off
 .course-hero { background:#1A1A1A; color:white; padding:64px 24px; }
 .hero-frame { max-width:976px; margin:auto; padding:56px; border:1px solid #AE445A; }
 .eyebrow { font-size:12px; font-weight:700; letter-spacing:.17em; color:#AE445A; margin-bottom:20px; }
-.course-hero .eyebrow, .instructor .eyebrow { color:#e4a9b5; }
+.course-hero .eyebrow { color:#e4a9b5; } .instructor .eyebrow { color:#963B51; }
 h1 { font-size:clamp(34px,5vw,60px); font-weight:900; line-height:1.4; margin:24px 0; }
 h1 span { display:block; font-size:clamp(20px,2.5vw,30px); margin-top:14px; }
 .course-hero h1 { text-wrap:balance; }
@@ -93,10 +93,10 @@ p { line-height:1.95; }
 .modules { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
 .modules article,.prep article { background:white; padding:28px; border:1px solid #e4dcd5; }
 .modules article:last-child { grid-column:1/-1; }
-.instructor { background:#1A1A1A; color:white; padding:64px 24px; }
+.instructor { background:#EEE7E2; color:#292626; padding:64px 24px; border-bottom:1px solid #D8C8C1; }
 .instructor-inner { max-width:976px; margin:auto; display:grid; grid-template-columns:280px 1fr; align-items:center; gap:48px; }
 .portrait { width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; }
-.teacher-tags { color:#e4a9b5; margin:20px 0; }
+.teacher-tags { color:#963B51; margin:20px 0; }
 .table-scroll { overflow-x:auto; margin-top:26px; }
 table { width:100%; border-collapse:collapse; text-align:left; font-size:16px; }
 th,td { padding:18px; border-bottom:1px solid #d8d0ca; line-height:1.8; }
@@ -179,3 +179,5 @@ img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-u
 
 .hero-frame.hero-frame-intro{grid-template-columns:minmax(0,1fr);max-width:976px}.hero-frame-intro .hero-content{max-width:760px}.hero-frame-intro .hero-description{margin-bottom:28px}
 
+
+.instructor .portrait{border:1px solid #AE445A}.instructor h2{color:#963B51}.instructor h3{color:#292626}
