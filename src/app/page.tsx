@@ -19,10 +19,7 @@ export default function CourseHome() {
     <CourseNav />
     <main>
       <section className="course-hero"><div className="hero-frame"><div className="hero-content"><p className="eyebrow">AI × STORY × MARKETING</p><p>2026/11/4–11/8・新北汐止・限 20 位</p><h1>AI 行銷影片實戰班<span><b className="hero-phrase">五天帶你做出</b><b className="hero-phrase">一支專屬行銷影片</b></span></h1><p className="hero-description">不用露臉、不用攝影機，五天做出一支幫你曝光獲客的 AI 行銷影片。</p><p className="hero-price">{price.label}</p><Register>立即報名五天實戰班 →</Register><a className="hero-more" href="#modules">查看課程內容 ↓</a><p className="registration-hint">前往超直白官方報名頁填表，再依指示付款。付款完成後，主辦於 1 個工作天內核對並寄出確認通知。</p></div><figure className="hero-teacher"><Image src="/instructor.png" alt="主講老師超直白白白" width={683} height={911} priority/><figcaption>主講老師｜超直白 白白</figcaption></figure></div></section>
-      <Section title="把你的產品與故事，做成一支影片">
-        <div className="intro-copy"><p>AI影片讓你眼花撩亂嗎？想要不露臉也能經營自媒體，想幫你的產品、你的事業做行銷嗎？</p><p>很多人不缺產品、不缺故事，缺的是把它們變成一支好影片的方法。從選題、腳本到生成與剪輯，我把實際練習的流程整理成五天課程，讓你用自己的商品或服務，一步一步完成作品。</p><p>這堂課，就是把我學到的敘事方法和製作流程，整理成最簡單、你也能用在生意上的實作課。不用先搞懂一大堆 AI 工具，你就是自己的行銷廣告公司。</p></div>
-      </Section>
-      <Section title="帶著題目來，帶著自己的作品回去"><div className="outcome"><strong>60<span>秒</span></strong><div><h3>一支專屬行銷影片</h3><p>從選題、腳本、角色與畫面生成到剪輯成片，以你的商品或服務作為實作題目，週日完成作品並分享成果。</p></div></div></Section>
+      <Section title="帶著你的商品，完成自己的影片"><div className="outcome"><strong>60<span>秒</span></strong><div><h3>一支專屬行銷影片</h3><p>以自己的商品或服務作為實作題目，五天逐步練習，週日完成作品並分享成果。每天學什麼、做出什麼，請看下方五天課綱。</p><a className="hero-more" href="#modules">查看五天圖解課綱 ↓</a></div></div></Section>
       <CourseFilms />
       <Section title="這堂課適合誰"><ol className="audiences">{audiences.map((text,i)=><li key={text}><ContentArt kind={["social","people","photo","script","laptop"][i]} small/><p>{text}</p></li>)}</ol></Section>
       <Section id="modules" title="五天，一步一步完成影片"><div className="modules">{days.map(([date,title,body],i)=><article key={date}><ContentArt kind={["script","people","photo","video","deliver"][i]}/><span className="eyebrow">DAY 0{i+1} · {date}</span><h3>{title}</h3><p>{body}</p><p className="day-output"><strong>當日實作：</strong>{["你的商品影片腳本","角色與場景設定","分鏡與生成素材","影片剪輯初稿","60 秒專屬行銷影片與成果分享"][i]}</p></article>)}</div></Section>
