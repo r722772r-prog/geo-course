@@ -176,3 +176,6 @@ button:focus-visible{outline:3px solid #ae445a;outline-offset:4px}
 img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
 
 .course-section>.art-heading{margin-bottom:30px}.audiences .content-art{min-width:54px}.modules .content-art{margin-bottom:20px}.prep .content-art{margin-bottom:18px}
+
+.hero-frame.hero-frame-intro{grid-template-columns:minmax(0,1fr);max-width:976px}.hero-frame-intro .hero-content{max-width:760px}.hero-frame-intro .hero-description{margin-bottom:28px}
+
