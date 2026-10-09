@@ -1,5 +1,6 @@
 'use client';
 
+import ContentArt from './ContentArt';
 import { useState } from 'react';
 
 const films = [
@@ -31,7 +32,7 @@ export default function CourseFilms() {
         </div>
         <div className="course-film-copy"><h3>{film.title}</h3><p>{film.description}</p></div>
       </article>)}
-    </div><div className="practice-flow"><h3>從商品到影片，課堂這樣練習</h3><p>帶 3–5 張商品或服務照片，先決定影片要介紹什麼，再按下面四步製作。以下為實作流程示意，非學員成果。</p><ol><li><strong>腳本</strong><span>整理商品特色與影片想說的事</span></li><li><strong>分鏡</strong><span>安排每個畫面與故事順序</span></li><li><strong>素材</strong><span>生成角色、場景與影片畫面</span></li><li><strong>成片</strong><span>剪輯素材、節奏與字幕，完成 60 秒行銷影片</span></li></ol></div>
+    </div><div className="practice-flow"><h3>從商品到影片，課堂這樣練習</h3><p>帶 3–5 張商品或服務照片，先決定影片要介紹什麼，再按下面四步製作。以下為實作流程示意，非學員成果。</p><ol><li><ContentArt kind="script" small/><strong>腳本</strong><span>整理商品特色與影片想說的事</span></li><li><ContentArt kind="photo" small/><strong>分鏡</strong><span>安排每個畫面與故事順序</span></li><li><ContentArt kind="people" small/><strong>素材</strong><span>生成角色、場景與影片畫面</span></li><li><ContentArt kind="video" small/><strong>成片</strong><span>剪輯素材、節奏與字幕，完成 60 秒行銷影片</span></li></ol></div>
     <p style={{margin:"28px 0"}}><a className="cta" href="https://chaozhibai.ai/cases">查看更多影片與作品 →</a></p>
     <p className="note">以上為合作團隊提供的作品，供製作風格參考，非本課程學員成果或五天課程成品保證；畫面品牌不代表超直白行銷的直接合作客戶。</p>
   </section>;

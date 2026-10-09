@@ -174,3 +174,5 @@ button:focus-visible{outline:3px solid #ae445a;outline-offset:4px}
 
 /* Discourage media saving; preserve text selection and playback. */
 img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
+
+.course-section>.art-heading{margin-bottom:30px}.audiences .content-art{min-width:54px}.modules .content-art{margin-bottom:20px}.prep .content-art{margin-bottom:18px}
