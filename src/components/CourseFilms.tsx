@@ -10,8 +10,8 @@ const mediaBase = 'https://chaozhibai.ai/portfolio-videos/';
 export default function CourseFilms() {
   const [active, setActive] = useState<string | null>(null);
   return <section id="film-examples" className="course-section" aria-labelledby="film-examples-title">
-    <p className="eyebrow">FILM REFERENCES / 影片風格參考</p>
-    <h2 id="film-examples-title">看看商品與故事，能有哪些畫面</h2>
+    <p className="eyebrow">TEAM WORK / 團隊作品</p>
+    <h2 id="film-examples-title">從團隊作品，認識影像的可能</h2>
     <p>看作品時，先留意三件事：商品特色是否清楚、使用情境是否容易理解、畫面是否符合品牌。將這些觀察帶進自己的課堂題目。</p>
     <div className="course-films">
       {films.map(film => <article key={film.slug} className="course-film-card">
@@ -33,6 +33,6 @@ export default function CourseFilms() {
       </article>)}
     </div>
     <p style={{margin:"28px 0"}}><a className="cta" href="https://chaozhibai.ai/cases">查看更多影片與作品 →</a></p>
-    <p className="note">以上為合作團隊提供的作品，供製作風格參考，非本課程學員成果或五天課程成品保證；畫面品牌不代表超直白行銷的直接合作客戶。</p>
+    <p className="note">團隊作品・風格參考。課堂將從商品照片與腳本逐步練習；此影片非學員成果，亦非五天課程成品保證。畫面品牌不代表課程主辦的委託客戶。</p>
   </section>;
 }
