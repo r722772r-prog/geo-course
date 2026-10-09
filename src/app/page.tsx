@@ -1,6 +1,6 @@
 import LessonPreview from "@/components/LessonPreview";
 import ContentArt from "@/components/ContentArt";
-import CourseMascot from "@/components/CourseMascot";
+
 import CourseNav from "@/components/CourseNav";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -32,7 +32,7 @@ export default function CourseHome() {
       <Section id="faq" title="報名前，你可能想知道"><div className="faqs">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div><p className="note"><a href="/refund">退費說明</a>・<a href={lineUrl}>加入官方 LINE 詢問</a></p></Section>
       <section id="registration" className="final-cta"><p className="eyebrow">從你的商品開始</p><h2>下一支行銷影片，由你完成。</h2><p>11/4–11/8｜新北汐止｜限 20 位</p><p>{price.label}</p><Register>前往報名表 →</Register><p className="note">填表 → 依連結付款 → 付款完成後 1 個工作天內核對並寄出確認通知</p></section>
     </main>
-    <CourseMascot/><footer className="course-footer"><a href="https://chaozhibai.ai">超直白行銷｜公司官網 →</a><nav aria-label="網站政策"><a href="/refund">退費說明</a><a href="/privacy">隱私權政策</a><a href="/terms">服務條款</a></nav><a href="mailto:chaozhibai.ai@gmail.com">chaozhibai.ai@gmail.com</a><p>{siteConfig.footer.copyright}</p></footer>
+    <footer className="course-footer"><a href="https://chaozhibai.ai">超直白行銷｜公司官網 →</a><nav aria-label="網站政策"><a href="/refund">退費說明</a><a href="/privacy">隱私權政策</a><a href="/terms">服務條款</a></nav><a href="mailto:chaozhibai.ai@gmail.com">chaozhibai.ai@gmail.com</a><p>{siteConfig.footer.copyright}</p></footer>
   </>;
 }
 

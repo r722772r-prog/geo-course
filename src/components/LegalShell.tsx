@@ -11,7 +11,7 @@ export default function LegalShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[#F8F5F2] text-[#1A1A1A] font-sans">
+    <div className="min-h-screen pb-28 bg-[#F8F5F2] text-[#1A1A1A] font-sans">
       <div className="h-[3px] bg-[#AE445A]" />
       <nav className="max-w-4xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-between items-center">
         <Link href="/" className="text-base font-bold text-[#1A1A1A] hover:text-[#AE445A]">

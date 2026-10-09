@@ -1,3 +1,4 @@
+import CourseMascot from "@/components/CourseMascot";
 import MediaProtection from "@/components/MediaProtection";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -56,7 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteConfig.jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}<MediaProtection /></body>
+      <body className="min-h-full flex flex-col">{children}<CourseMascot/><MediaProtection /></body>
     </html>
   );
 }
