@@ -1,2 +1,3 @@
-import Image from "next/image";
-export default function LessonPreview(){return <figure className="lesson-work-example"><div className="lesson-work-pair"><div><Image src="/lesson-examples/fashion-product.jpg" alt="服飾作品中的黃色外套商品畫面" width={1920} height={1080}/><span>看見商品特色</span></div><div><Image src="/lesson-examples/streetwear-motion.jpg" alt="同一服飾作品中的人物穿搭情境" width={2560} height={1440}/><span>延伸人物與情境</span></div></div><figcaption>以既有團隊作品說明畫面思考，非學員成果或原始製作流程紀錄。</figcaption></figure>}
+import ContentArt from './ContentArt';
+const steps = [['photo','商品照片','帶來自己的題目'],['script','影片腳本','整理特色與故事'],['video','分鏡與素材','把文字變成畫面'],['video','剪輯成片','串起畫面與節奏']];
+export default function LessonPreview(){return <figure className="lesson-flow"><ol>{steps.map(([kind,title,text])=><li key={title}><ContentArt kind={kind} small/><strong>{title}</strong><span>{text}</span></li>)}</ol><figcaption>教學流程示意｜以你自己的商品或服務逐步實作。</figcaption></figure>}

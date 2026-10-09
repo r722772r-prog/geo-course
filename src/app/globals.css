@@ -205,3 +205,7 @@ img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-u
 
 /* Expand lesson detail only when the visitor needs it. */
 .lesson-detail{margin:14px 0;font-size:16px;border-top:1px solid #d8c7c3;padding-top:10px}.lesson-detail summary{cursor:pointer;color:#96394d;min-height:44px;display:list-item;list-style-position:inside}.lesson-detail p{margin:10px 0;line-height:1.85}.lesson-detail summary:focus-visible{outline:2px solid #ae445a;outline-offset:4px}
+
+/* Visible learning sequence. */
+.lesson-flow{margin:0 0 32px}.lesson-flow ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;list-style:none;padding:24px 0;border-block:1px solid #d8c7c3}.lesson-flow li{position:relative;display:flex;flex-direction:column;gap:8px;min-width:0}.lesson-flow li:not(:last-child)::after{content:'';position:absolute;right:0;top:25px;width:10px;height:10px;border-top:1px solid #96394d;border-right:1px solid #96394d;transform:rotate(45deg)}.lesson-flow strong{font-size:20px;font-weight:500}.lesson-flow span,.lesson-flow figcaption{font-size:15px;line-height:1.7;color:#615a56}.lesson-flow figcaption{margin-top:12px}.modules .lesson-description{font-size:17px;line-height:1.8;margin:12px 0 0}
+@media(max-width:640px){.lesson-flow ol{grid-template-columns:1fr;gap:24px}.lesson-flow li{padding-left:64px;min-height:54px}.lesson-flow .content-art{position:absolute;left:0;top:0}.lesson-flow li:not(:last-child)::after{left:23px;top:auto;bottom:-16px;transform:rotate(135deg);width:7px;height:7px}}
