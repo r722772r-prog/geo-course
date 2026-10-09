@@ -12,7 +12,7 @@ export default function CourseFilms() {
   return <section id="film-examples" className="course-section" aria-labelledby="film-examples-title">
     <p className="eyebrow">FILM REFERENCES / 影片風格參考</p>
     <h2 id="film-examples-title">看看商品與故事，能有哪些畫面</h2>
-    <p>從服飾展示到品牌情境，先找找你喜歡的影片方向。</p>
+    <p>看作品時，先留意三件事：商品特色是否清楚、使用情境是否容易理解、畫面是否符合品牌。將這些觀察帶進自己的課堂題目。</p>
     <div className="course-films">
       {films.map(film => <article key={film.slug} className="course-film-card">
         <div className="course-film-screen">

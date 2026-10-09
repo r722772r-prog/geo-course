@@ -202,3 +202,6 @@ img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-u
 @keyframes baibai-teacher-greeting{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
 @media(prefers-reduced-motion:reduce){.course-mascot img{animation:none!important;transform:none!important}}
 
+
+/* Expand lesson detail only when the visitor needs it. */
+.lesson-detail{margin:14px 0;font-size:16px;border-top:1px solid #d8c7c3;padding-top:10px}.lesson-detail summary{cursor:pointer;color:#96394d;min-height:44px;display:list-item;list-style-position:inside}.lesson-detail p{margin:10px 0;line-height:1.85}.lesson-detail summary:focus-visible{outline:2px solid #ae445a;outline-offset:4px}
