@@ -198,8 +198,7 @@ img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-u
 @media(max-width:640px){.lesson-work-pair{grid-template-columns:1fr;gap:20px}}
 /* Continuous mascot greeting with explicit pause and reduced motion support. */
 .course-mascot img{transform-origin:50% 90%}
-@media(prefers-reduced-motion:no-preference){.course-mascot img{animation:baibai-teacher-greeting 3.6s cubic-bezier(.45,0,.55,1) infinite}.course-mascot[data-motion-paused="true"] img{animation-play-state:paused}}
+@media(prefers-reduced-motion:no-preference){.course-mascot img{animation:baibai-teacher-greeting 3.6s cubic-bezier(.45,0,.55,1) infinite}}
 @keyframes baibai-teacher-greeting{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
 @media(prefers-reduced-motion:reduce){.course-mascot img{animation:none!important;transform:none!important}}
 
-.mascot-motion-toggle{display:block;margin:8px auto 0;min-height:44px;padding:6px 12px;border:0;background:transparent;color:#873348;font-size:14px;text-decoration:underline;cursor:pointer;pointer-events:auto}.mascot-motion-toggle:focus-visible{outline:3px solid #ae445a;outline-offset:3px}@media(prefers-reduced-motion:reduce){.mascot-motion-toggle{display:none}}
