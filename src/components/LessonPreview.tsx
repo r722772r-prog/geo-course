@@ -1,0 +1,2 @@
+import Image from "next/image";
+export default function LessonPreview(){return <figure className="lesson-work-example"><div className="lesson-work-pair"><div><Image src="/lesson-examples/fashion-product.jpg" alt="服飾作品中的黃色外套商品畫面" width={1920} height={1080}/><span>看見商品特色</span></div><div><Image src="/lesson-examples/streetwear-motion.jpg" alt="同一服飾作品中的人物穿搭情境" width={2560} height={1440}/><span>延伸人物與情境</span></div></div><figcaption>以既有團隊作品說明畫面思考，非學員成果或原始製作流程紀錄。</figcaption></figure>}

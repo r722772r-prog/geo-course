@@ -181,3 +181,18 @@ img:not([data-allow-media-save]), video { -webkit-touch-callout: none; -webkit-u
 
 
 .instructor .portrait{border:1px solid #AE445A}.instructor h2{color:#963B51}.instructor h3{color:#292626}
+
+/* Warm teaching materials with concrete lesson diagrams. */
+.modules article,.prep article,.pricing article,.outcome{background:#EEE7E2;border:1px solid #D8C8C1}
+.modules article{padding:22px}.lesson-preview{margin:0 0 20px;padding:12px;background:#E5D9D2;color:#873348;border:1px solid #CFB8B9}
+.lesson-preview svg{display:block;width:100%;height:120px}.lesson-preview figcaption{font-family:var(--font-sans);font-size:15px;line-height:1.6;text-align:center;margin-top:6px;color:#63313E}
+.modules article:last-child .lesson-preview{max-width:420px}.modules .day-output{margin-top:14px;padding-top:12px}.modules h3{margin-bottom:10px}
+.mascot-reopen{display:flex;align-items:center;gap:7px;padding:8px 14px;min-height:44px;font-size:16px}.mascot-reopen img{width:30px;height:45px;object-fit:contain}.mascot-close{min-width:44px;min-height:44px}
+@media(max-width:640px){.modules article{padding:18px}.lesson-preview svg{height:110px}.course-mascot{width:auto}.mascot-panel{width:176px}.mascot-reopen{font-size:14px;padding:6px 12px}.mascot-reopen img{width:24px;height:36px}}
+
+/* One real-work example, followed by concise daily outcomes. */
+.lesson-work-example{margin:0 0 26px}.lesson-work-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}.lesson-work-pair img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border:1px solid #963B51}.lesson-work-pair span{display:block;margin-top:8px;font-size:17px;font-weight:700;color:#873348}.lesson-work-example figcaption{font-size:14px;line-height:1.7;color:#615a56;margin-top:14px}
+.modules article{padding:20px 22px}.modules .day-output{margin:8px 0 0;padding:0;border:0}.modules .eyebrow{margin-bottom:8px}.modules h3{margin:8px 0}.art-heading h2{text-wrap:balance;min-width:0}
+@media(max-width:640px){.lesson-work-pair{gap:10px}.lesson-work-pair span{font-size:15px}.modules article{padding:18px}.art-heading{gap:12px}.art-heading .content-art{width:40px;min-width:40px}.art-heading h2{font-size:25px}}
+
+@media(max-width:640px){.lesson-work-pair{grid-template-columns:1fr;gap:20px}}

@@ -1,3 +1,4 @@
+import LessonPreview from "@/components/LessonPreview";
 import ContentArt from "@/components/ContentArt";
 import CourseMascot from "@/components/CourseMascot";
 import CourseNav from "@/components/CourseNav";
@@ -23,7 +24,7 @@ export default function CourseHome() {
       <Section title="帶著你的商品，完成自己的影片"><div className="outcome"><strong>60<span>秒</span></strong><div><h3>一支專屬行銷影片</h3><p>以自己的商品或服務作為實作題目，五天逐步練習，週日完成作品並分享成果。每天學什麼、做出什麼，請看下方五天課綱。</p><a className="hero-more" href="#modules">查看五天圖解課綱 ↓</a></div></div></Section>
       <CourseFilms />
       <Section title="這堂課適合誰"><ol className="audiences">{audiences.map((text,i)=><li key={text}><ContentArt kind={["social","people","photo","script","laptop"][i]} small/><p>{text}</p></li>)}</ol></Section>
-      <Section id="modules" title="五天，一步一步完成影片"><div className="modules">{days.map(([date,title,body],i)=><article key={date}><ContentArt kind={["script","people","photo","video","deliver"][i]}/><span className="eyebrow">DAY 0{i+1} · {date}</span><h3>{title}</h3><p>{body}</p><p className="day-output"><strong>當日實作：</strong>{["你的商品影片腳本","角色與場景設定","分鏡與生成素材","影片剪輯初稿","60 秒專屬行銷影片與成果分享"][i]}</p></article>)}</div></Section>
+      <Section id="modules" title="五天完成你的影片"><LessonPreview/><div className="modules">{days.map(([date,title],i)=><article key={date}><span className="eyebrow">DAY 0{i+1} · {date}</span><h3>{title}</h3><p className="day-output"><strong>帶走：</strong>{["你的商品影片腳本","角色與場景設定","分鏡與生成素材","影片剪輯初稿","60 秒影片；週日 15:00 成果發表"][i]}</p></article>)}</div></Section>
 
       <Section title="上課時間與地點"><p>2026/11/4（三）–11/8（日）｜新北汐止｜五天共 22 小時</p><div className="table-scroll"><table><caption className="sr-only">五天上課及報到時間</caption><thead><tr><th>日期</th><th>報到</th><th>上課時間</th></tr></thead><tbody>{days.map(([date,,,checkin,time])=><tr key={date}><th>{date}</th><td>{checkin}</td><td>{time}</td></tr>)}</tbody></table></div><p className="note">週六日中午休息一小時；週日 15:00 起成果發表。詳細教室與交通資訊於學員通知提供。</p></Section>
       <Section title="課前準備"><div className="prep"><article><ContentArt kind="laptop"/><h3>每天帶筆電</h3><p>五天都是實作課，請攜帶可上網的筆電與充電器。</p></article><article><ContentArt kind="photo"/><h3>準備你的題目</h3><p>想好要做影片的商品或服務，準備 3–5 張相關照片。</p></article><article><ContentArt kind="fee"/><h3>預留工具費</h3><p>AI 工具積分自購約 NT$1,500，依個人練習量增減。工具清單與註冊教學於 10/27 前寄出，請於開課前完成註冊。</p></article></div></Section>
