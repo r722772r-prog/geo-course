@@ -7,8 +7,9 @@ export const refundRules = [
   ["2026/10/29 起", "不退費，可轉讓"],
 ];
 export function getPricing(now = new Date()) {
-  const early = now.getTime() < Date.parse("2026-10-16T00:00:00+08:00");
-  return { early, amount: early ? 14800 : 19800, label: early ? "原價 19,800｜早鳥 14,800（10/15 止）" : "課程全款 NT$19,800" };
+  // Future price increases require an explicit update; no 10/16 price switch.
+  const depositOpen = now.getTime() < Date.parse("2026-10-26T00:00:00+08:00");
+  return { early: true, depositOpen, amount: 15000, label: "原價 19,800｜早鳥 15,000（2026 年底前）" };
 }
 export const audiences = [
   "店家與品牌經營者：外包一支片太貴，想自己做出能帶客的影片",
