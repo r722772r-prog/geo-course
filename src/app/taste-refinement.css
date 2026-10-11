@@ -1,0 +1,21 @@
+/* Course reading layout: editorial headings and a single learning sequence. */
+.course-section{padding-block:clamp(56px,7vw,88px)}
+.course-section>.art-heading{gap:20px;margin-bottom:36px;align-items:center}
+.course-section>.art-heading h2{font-size:clamp(28px,3.6vw,42px);font-weight:500;line-height:1.5}
+.course-section>p{max-width:42em;font-size:18px}
+.course-section .modules{display:block;border-top:1px solid #cbbab4}
+.course-section .modules article{display:grid;grid-template-columns:150px minmax(0,.8fr) minmax(0,1.2fr);align-items:start;gap:28px;padding:30px 0;border:0;border-bottom:1px solid #cbbab4;background:transparent}
+.course-section .modules .eyebrow{margin:6px 0 0;font-size:14px;letter-spacing:.04em;line-height:1.8;color:#96394d}
+.course-section .modules h3{margin:0;font-size:24px;font-weight:500}
+.course-section .modules .lesson-description{margin:0;color:#615a56;font-size:18px;line-height:1.9}
+.course-section .outcome{border:0;border-left:3px solid #ae445a;padding:32px 40px;background:#eee7e2;gap:40px}
+.course-section .outcome-support{margin-top:16px;color:#615a56;font-size:17px}
+.course-section .prep{gap:32px}.course-section .prep article{background:transparent;border:0;border-top:1px solid #cbbab4;padding:24px 0}
+.course-section .pricing{gap:28px}.course-section .pricing article{display:flex;flex-direction:column;padding:32px;border:1px solid #d8c8c1;border-radius:8px;background:#eee7e2}
+.course-section .pricing article>.cta{margin-top:auto;align-self:stretch}
+.course-section .pricing article>p:last-of-type{margin-bottom:24px}
+.course-section .pricing h3{font-variant-numeric:tabular-nums}
+.course-section .faqs summary{padding-block:20px;line-height:1.7}
+.course-section .faqs details>p{max-width:42em;color:#615a56}
+@media(prefers-reduced-motion:no-preference){.cta{transition:background 180ms cubic-bezier(.2,.7,.3,1),transform 180ms cubic-bezier(.2,.7,.3,1)}.cta:active{transform:translateY(1px)}}
+@media(max-width:767px){.course-section .modules article{grid-template-columns:1fr;gap:8px;padding:24px 0}.course-section .modules h3{font-size:24px}.course-section .modules .eyebrow{margin:0}.course-section .outcome{padding:24px;gap:24px}.course-section .pricing article{padding:24px}.course-section>.art-heading{gap:14px;margin-bottom:28px}}
