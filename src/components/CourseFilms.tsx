@@ -33,6 +33,6 @@ export default function CourseFilms() {
       </article>)}
     </div>
     <p style={{margin:"28px 0"}}><a className="cta" href="https://chaozhibai.ai/cases">查看更多影片與作品 →</a></p>
-    <p className="note">團隊作品・風格參考。課堂將從商品照片與腳本逐步練習；此影片非學員成果，亦非五天課程成品保證。畫面品牌不代表課程主辦的委託客戶。</p>
+    <p className="note">團隊作品・風格參考。課堂將從商品照片與腳本逐步練習；此影片非學員成果，亦非兩天課程成品保證。畫面品牌不代表課程主辦的委託客戶。</p>
   </section>;
 }
