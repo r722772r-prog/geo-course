@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://course.chaozhibai.ai/privacy" },
   title: "隱私權政策｜AI 行銷影片實戰班・超直白行銷",
   description:
-    "超直白行銷股份有限公司隱私權政策：我們僅在課程報名時透過表單蒐集必要的個人資料（姓名與聯絡方式），用於課程通知與服務聯繫，不會出售或提供給無關第三方。",
+    "超直白行銷課程報名資料的蒐集、使用、第三方服務、保存期間與個資權利說明。",
 };
 
 export default function PrivacyPage() {
   return (
-    <LegalShell title="隱私權政策" updated="2026 年 10 月 8 日">
+    <LegalShell title="隱私權政策" updated="2026 年 10 月 20 日">
       <p>
         超直白行銷股份有限公司（以下稱「本公司」）重視你的個人資料保護。本政策說明本網站（course.chaozhibai.ai）與課程報名流程中，我們如何蒐集、使用與保護你的資料。
       </p>
