@@ -16,6 +16,7 @@ export default function CourseHome() {
   const price = getPricing();
   const schema = {"@context":"https://schema.org", "@type":"Course", name:courseTitle, description:siteConfig.seo.description, provider:{"@type":"Organization",name:"超直白行銷",url:"https://chaozhibai.ai"}, hasCourseInstance:{"@type":"CourseInstance",courseMode:"Online",courseWorkload:"PT11H30M",startDate:"2026-12-12T10:00:00+08:00",endDate:"2026-12-23T21:30:00+08:00",instructor:{"@type":"Person",name:"超直白 白白"},location:{"@type":"VirtualLocation",url:"https://course.chaozhibai.ai"},offers:{"@type":"Offer",price:price.amount,priceCurrency:"TWD",url:registrationUrl}}};
   return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"WebSite","@id":`${siteConfig.url}/#website`,url:siteConfig.url,name:siteConfig.name,description:siteConfig.seo.description,inLanguage:siteConfig.lang,publisher:{"@type":"Organization",name:"超直白行銷",url:"https://chaozhibai.ai"}}).replace(/</g,"\\u003c")}} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))})}} />
     <CourseNav />
