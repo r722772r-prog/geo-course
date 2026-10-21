@@ -30,3 +30,14 @@
 .course-fit-facts>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding:20px 0;border-bottom:1px solid #d8c8c1}
 .course-fit-facts dt{font-weight:700;color:#873348}.course-fit-facts dd{margin:0;line-height:1.85}
 @media(max-width:640px){.course-fit-facts>div{grid-template-columns:1fr;gap:8px}}
+
+/* Published production reference: complete framing and a readable mobile sequence. */
+.production-example-figure{margin:28px 0}
+.production-example-figure img{display:block;width:100%;height:auto;border:1px solid #d8c8c1}
+.production-example-figure figcaption{margin-top:12px;font-size:15px;line-height:1.8;color:#62534e}
+.production-example-steps{list-style:none;counter-reset:production-step;margin:28px 0;padding:0;border-top:1px solid #d8c8c1}
+.production-example-steps li{counter-increment:production-step;display:grid;grid-template-columns:36px minmax(0,.7fr) minmax(0,1.3fr);gap:20px;padding:24px 0;border-bottom:1px solid #d8c8c1}
+.production-example-steps li::before{content:counter(production-step,decimal-leading-zero);color:#873348;font-variant-numeric:tabular-nums}
+.production-example-steps h3{margin:0;font-size:23px;font-weight:500}
+.production-example-steps p{margin:0;line-height:1.9;color:#615a56}
+@media(max-width:767px){.production-example-steps li{grid-template-columns:30px minmax(0,1fr);gap:8px 12px}.production-example-steps p{grid-column:2}.production-example-figure{margin:24px 0}}
