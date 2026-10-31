@@ -73,9 +73,26 @@
 @media(max-width:560px){.course-tiles,.course-tiles-4{grid-template-columns:1fr}.course-tile{display:grid;grid-template-columns:40px 1fr;column-gap:14px;padding:16px}.course-tile h3{margin:0 0 4px;font-size:18px}.course-tile>svg,.course-tile>span{grid-row:span 2}}
 /* 參考事項：三欄精簡 */
 .reference-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.reference-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.reference-card{background:#eee7e2;border:1px solid #d8c8c1;border-top:4px solid #ae445a;padding:26px 26px 18px}
+.reference-card-notes{background:#f8f5f2;border-top-color:#1a1a1a}
+.reference-card h3{font-size:22px;margin:0 0 14px}
+.reference-card li:first-child{border-top:0;padding-top:0}
+.reference-card-notes li{padding-left:22px;position:relative}
+.reference-card-notes li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:10px;background:#ae445a}
 .reference-grid>div{min-width:0}
 .reference-grid h3{font-size:19px;font-weight:700;margin:0 0 8px;color:#873348}
 .reference-grid ul{list-style:none;margin:0;padding:0}
 .reference-grid li{padding:10px 0;border-top:1px solid #d8c8c1;font-size:15px;line-height:1.75;color:#615a56}
 .reference-grid li strong{display:block;color:#292626;font-weight:700}
-@media(max-width:900px){.reference-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.reference-grid,.reference-grid-2{grid-template-columns:1fr}}
+
+/* 適合誰：獨立區塊，色塊＋序號，標題與內文分層 */
+.audience-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
+.audience-tile{position:relative;background:#eee7e2;border:1px solid #d8c8c1;border-left:6px solid #ae445a;padding:22px 22px 20px 24px;min-width:0}
+.audience-tile:nth-child(even){background:#f8f5f2}
+.audience-index{display:block;font-size:13px;font-weight:800;letter-spacing:.18em;color:#ae445a;margin-bottom:10px}
+.audience-tile h3{margin:0 0 8px;font-size:21px;font-weight:800;line-height:1.35;color:#1a1a1a}
+.audience-tile p{margin:0;font-size:15px;line-height:1.8;color:#615a56}
+@media(max-width:900px){.audience-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.audience-tiles{grid-template-columns:1fr}.audience-tile{padding:16px 16px 16px 18px}.audience-tile h3{font-size:18px}}
