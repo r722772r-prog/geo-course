@@ -42,6 +42,12 @@
 .production-example-steps p{margin:0;line-height:1.9;color:#615a56}
 @media(max-width:767px){.production-example-steps li{grid-template-columns:30px minmax(0,1fr);gap:8px 12px}.production-example-steps p{grid-column:2}.production-example-figure{margin:24px 0}}
 
+/* AI IP 兩日班：hero 右側合照 */
+.hero-frame.hero-frame-intro{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);max-width:1160px;align-items:center}
+.hero-visual{margin:0;min-width:0}
+.hero-visual img{display:block;width:100%;height:auto;border:1px solid #5a3a42}
+.hero-visual figcaption{margin-top:10px;font-size:13px;line-height:1.7;color:#bdb3ae}
+@media(max-width:900px){.hero-frame.hero-frame-intro{grid-template-columns:1fr}.hero-visual{max-width:560px}}
 /* AI IP 兩日班：圖示卡片、單元清單、角色資產圖、注意事項 */
 .course-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
 .course-tiles-4{grid-template-columns:repeat(4,minmax(0,1fr))}
