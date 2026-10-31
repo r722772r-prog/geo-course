@@ -3,7 +3,7 @@ import LegalShell, { Section } from "@/components/LegalShell";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://course.chaozhibai.ai/privacy" },
-  title: "隱私權政策｜AI 行銷影片實戰班・超直白行銷",
+  title: "隱私權政策｜AI IP 兩日班・超直白行銷",
   description:
     "超直白行銷課程報名資料的蒐集、使用、第三方服務、保存期間與個資權利說明。",
 };

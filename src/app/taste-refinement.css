@@ -41,3 +41,27 @@
 .production-example-steps h3{margin:0;font-size:23px;font-weight:500}
 .production-example-steps p{margin:0;line-height:1.9;color:#615a56}
 @media(max-width:767px){.production-example-steps li{grid-template-columns:30px minmax(0,1fr);gap:8px 12px}.production-example-steps p{grid-column:2}.production-example-figure{margin:24px 0}}
+
+/* AI IP 兩日班：圖示卡片、單元清單、角色資產圖、注意事項 */
+.course-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:8px}
+.course-tiles-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.course-tile{background:#eee7e2;border:1px solid #d8c8c1;padding:24px 22px 22px;min-width:0}
+.course-tile h3{margin:14px 0 8px;font-size:20px;font-weight:700;line-height:1.4}
+.course-tile p{margin:0;color:#615a56;line-height:1.8;font-size:15px}
+.course-section .modules article{grid-template-columns:150px minmax(0,1fr)}
+.course-units{list-style:none;margin:18px 0 0;padding:0;counter-reset:unit}
+.course-units li{counter-increment:unit;position:relative;padding:12px 0 12px 34px;border-top:1px solid #d8c8c1;color:#615a56;line-height:1.8;font-size:16px}
+.course-units li::before{content:counter(unit);position:absolute;left:0;top:14px;color:#96394d;font-variant-numeric:tabular-nums}
+.course-units strong{display:block;color:#292626;font-weight:700}
+.course-section .audiences li p{margin:0;line-height:1.8}
+.course-section .audiences strong{display:block;font-size:19px;font-weight:700;margin-bottom:2px}
+.asset-figure{margin:28px 0}
+.asset-figure img{display:block;width:100%;height:auto;border:1px solid #d8c8c1;background:#fff}
+.asset-figure figcaption{margin-top:12px;font-size:15px;line-height:1.8;color:#62534e}
+.asset-sheets{display:grid;gap:14px}
+.asset-group{max-width:820px}
+.course-notes{list-style:none;margin:0;padding:0;max-width:52em}
+.course-notes li{position:relative;padding:12px 0 12px 20px;border-top:1px solid #d8c8c1;line-height:1.85}
+.course-notes li::before{content:"";position:absolute;left:0;top:22px;width:8px;height:8px;background:#ae445a}
+@media(max-width:900px){.course-tiles,.course-tiles-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.course-tiles,.course-tiles-4{grid-template-columns:1fr}.course-tile{display:grid;grid-template-columns:40px 1fr;column-gap:14px;padding:16px}.course-tile h3{margin:0 0 4px;font-size:18px}.course-tile>svg,.course-tile>span{grid-row:span 2}}

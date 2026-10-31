@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalShell, { Section } from "@/components/LegalShell";
-export const metadata: Metadata = {title:"服務條款｜AI 行銷影片實戰班",description:"AI 行銷影片實戰班報名、付款與課程使用說明。",alternates:{canonical:"https://course.chaozhibai.ai/terms"}};
+export const metadata: Metadata = {title:"服務條款｜AI IP 兩日班",description:"AI IP 兩日班報名、付款與課程使用說明。",alternates:{canonical:"https://course.chaozhibai.ai/terms"}};
 export default function TermsPage() { return <LegalShell title="服務條款" updated="2026 年 10 月 20 日">
 <p>本課程由超直白行銷股份有限公司提供。</p>
 <Section heading="一、報名與付款"><p>請先填寫報名表，再使用完成頁提供的 NT$4,900 藍新付款連結，於 2026/12/11 23:59 前完成付款。付款頁請填寫與報名表相同的姓名與手機，方便核對。主辦核對款項後提供確認通知；填表本身不是正式報名確認。</p><p>費用依當期公告與所選方案辦理。AI 工具積分另由學員自購，預估約 NT$1,500，依練習量增減。</p><p>取消、轉讓及退費依<a href="/refund" className="underline">退費說明</a>辦理。</p></Section>

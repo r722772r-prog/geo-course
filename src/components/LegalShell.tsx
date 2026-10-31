@@ -15,7 +15,7 @@ export default function LegalShell({
       <div className="h-[3px] bg-[#AE445A]" />
       <nav className="max-w-4xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-between items-center">
         <Link href="/" className="text-base font-bold text-[#1A1A1A] hover:text-[#AE445A]">
-          超直白行銷｜AI 行銷影片實戰班
+          超直白行銷｜AI IP 兩日班
         </Link>
         <Link href="/" className="text-base text-[#1A1A1A]/80 hover:text-[#AE445A] transition-colors">
           ← 回課程首頁
