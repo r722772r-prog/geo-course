@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+import ts from 'typescript';
+const js=ts.transpile(readFileSync('src/lib/course-registration.ts','utf8'),{module:ts.ModuleKind.CommonJS});
+const exports={};vm.runInNewContext(js,{exports,Date,URL});
+const valid={version:exports.registrationVersion,requestId:'3e2abcde-0000-4000-8000-123456789abc',name:'測試使用者',phone:'+886 912-345-678',email:'TEST@EXAMPLE.COM',goal:'測試角色帳號',consent:true,website:''};
+const now=Date.parse('2026-11-01T12:00:00+08:00');
+assert.equal(exports.parseRegistration(valid,now).phone,'0912345678');
+assert.equal(exports.parseRegistration(valid,now).email,'test@example.com');
+for(const change of [{consent:false},{phone:'12345'},{email:'test@'},{website:'https://spam.invalid'},{requestId:'<script>'},{goal:'a'.repeat(1001)},{name:'=bad\u0000'}])assert.throws(()=>exports.parseRegistration({...valid,...change},now));
+assert.throws(()=>exports.parseRegistration(valid,Date.parse('2026-12-12T00:00:00+08:00')));
+const route=readFileSync('src/app/api/course-registration/route.ts','utf8');
+assert.ok(!route.includes('chatgpt.site'));
+assert.ok(!readFileSync('src/components/CourseRegistration.tsx','utf8').includes('localStorage'));
+console.log('PASS validation: consent, phone/email, length, abuse trap, request ID, deadline, no Sites dependency or local PII persistence');

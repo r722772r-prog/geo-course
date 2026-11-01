@@ -1,0 +1,24 @@
+# 課程站內報名與藍新付款
+
+報名表位於課程頁的 `#registration-form`。伺服器確認名單已保存後，才回傳既有 NT$4,900 藍新付款連結；不使用原 chatgpt.site。
+
+## 正式連線設定
+
+在既有 Vercel 專案 `r722772r-progs-projects/geo-course` 設定以下伺服器環境變數，至少勾選 Production。需要測試預覽時也勾選 Preview。
+
+- `COURSE_REGISTRATION_WEBAPP_URL`：`https://script.google.com/macros/s/AKfycbwO1NtNQ58BEIaiBAFc8Cx3boVfRLuNrnKkWOmiBlmwJKJmlvDA771FNvDdbiUlPJwp/exec`
+- `COURSE_REGISTRATION_SECRET`：從下方 Google 專案的「專案設定 → 指令碼屬性 → REGISTRATION_SECRET」取得。設定為敏感值，不可加上 NEXT_PUBLIC 前綴、提交至 Git 或貼進對話。
+
+Google 專案：
+https://script.google.com/u/1/home/projects/1ll8TufluvB6QuMl3hAxE0yfALi283KZpkjLvNFBQo8RizIZAivcW-ZC5/edit
+
+2026-11-01 已完成 initializeRegistration 與網頁應用程式第 1 版部署。名單保持私人；公開 GET 只回傳健康狀態，寫入仍須伺服器密鑰。
+
+## 上線前確認
+
+1. 設定兩個環境變數後重新部署，先在 Preview 驗證保存名單、同一請求重試與重複手機處理。尚未以正式個資送出報名或實際付款。
+2. 藍新連結金額已確認為 NT$4,900，但付款頁目前仍顯示舊課名「AI 行銷影片實戰班」，商店簡介仍寫實體課程；由金流負責人同步更新。
+3. 表單填寫成功不表示付款完成，付款由主辦人工核對。此版本沒有自動收件通知信、金流回呼或名額同步功能；請勿宣稱已自動寄信或自動確認名額。
+4. 原網站的既有名單未遷移，須保留原名單核對。新名單可從上述專案指令碼屬性 REGISTRATION_SHEET_ID 找到。
+
+缺少環境設定時 API 回覆服務未就緒，不會顯示付款連結或宣稱已保存報名。

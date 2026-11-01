@@ -1,0 +1,24 @@
+.course-registration { border-top: 1px solid #d8cbc3; padding-block: 2rem; font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; color: #352e2b; }
+.registration-intro h3, .registration-complete h3 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.5; }
+.registration-intro p, .registration-complete p { line-height: 1.9; margin-block: 1rem; }
+.registration-intro ol { display: flex; gap: .6rem 1.8rem; flex-wrap: wrap; list-style: decimal inside; color: #873348; margin-block: 1.5rem 2rem; }
+.course-registration fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.registration-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem 1.5rem; }
+.registration-wide { grid-column: 1/-1; }
+.registration-fields label { display: flex; flex-direction: column; gap: .5rem; font-weight: 600; }
+.registration-fields label > span { display: inline; }
+.registration-fields input, .registration-fields textarea { width: 100%; min-height: 48px; padding: .8rem 1rem; border: 1px solid #b9a69b; border-radius: 4px; background: #fffdfb; color: #352e2b; font: inherit; font-weight: 400; }
+.registration-fields textarea { resize: vertical; min-height: 110px; }
+.registration-fields input:focus-visible, .registration-fields textarea:focus-visible, .course-registration .cta:focus-visible { outline: 3px solid #873348; outline-offset: 3px; }
+.registration-fields small { font-size: .88rem; font-weight: 400; color: #6f6058; line-height: 1.7; }
+.registration-plan { margin-block: 1.5rem; font-size: .95rem; line-height: 1.8; }
+.registration-consent { display: flex; align-items: flex-start; gap: .8rem; font-size: .95rem; line-height: 1.9; margin-bottom: 1.5rem; }
+.registration-consent input { flex: 0 0 auto; margin-top: .38rem; width: 20px; height: 20px; accent-color: #873348; }
+.course-registration a:not(.cta) { color: #873348; text-decoration: underline; text-underline-offset: .2em; }
+.course-registration button:disabled, .course-registration fieldset:disabled .cta { opacity: .65; cursor: wait; }
+.registration-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.registration-error { color: #a1263e; line-height: 1.8; }
+.registration-contact { margin-top: 1rem; font-size: .95rem; line-height: 1.8; }
+.registration-complete { padding: 1.5rem; border-left: 3px solid #873348; background: #f0e8e2; outline-offset: 4px; }
+.registration-complete strong { overflow-wrap: anywhere; }
+@media (max-width: 600px) { .registration-fields { grid-template-columns: minmax(0,1fr); } .registration-intro ol { display: block; } .registration-intro li { margin-block: .5rem; } .course-registration .cta { width: 100%; text-align: center; } .registration-complete { padding: 1rem; } }
