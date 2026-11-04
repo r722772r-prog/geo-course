@@ -34,7 +34,7 @@ export default function CourseRegistration() {
       });
       const result = await response.json();
       if (!response.ok || !result.saved) throw new Error(result.error || "尚未完成收件，請稍後重試。");
-      if (result.paymentUrl && result.paymentUrl !== "https://core.newebpay.com/EPG/chaozhibai/aAXr9i") throw new Error("付款連結無法確認，請聯絡主辦。");
+      if (result.paymentUrl && result.paymentUrl !== "https://core.newebpay.com/EPG/chaozhibai/6ccU9q") throw new Error("付款連結無法確認，請聯絡主辦。");
       setSaved({ id: result.id, paymentUrl: result.paymentUrl });
       requestAnimationFrame(() => confirmation.current?.focus());
     } catch (err) {

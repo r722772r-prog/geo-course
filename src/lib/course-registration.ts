@@ -1,5 +1,5 @@
 export const registrationVersion = "2026-11-01-ai-ip-v1";
-export const paymentUrl = "https://core.newebpay.com/EPG/chaozhibai/aAXr9i";
+export const paymentUrl = "https://core.newebpay.com/EPG/chaozhibai/6ccU9q";
 export const registrationClosesAt = "2026-12-11T23:59:59+08:00";
 
 export type Registration = { requestId: string; name: string; phone: string; email: string; goal: string; consent: true; website: string };
