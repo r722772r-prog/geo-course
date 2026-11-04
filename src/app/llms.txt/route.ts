@@ -13,7 +13,7 @@ export function GET() {
   "", "## 兩天課程，你會得到", ...takeaways.map(([t, d]) => `- ${t}：${d}`),
   "", "## 學完後你可以做什麼", ...outcomes.map(([t, d]) => `- ${t}：${d}`),
   "", "## 注意事項", ...notes.map(n => `- ${n}`),
-  "", "## 費用", price.label, "首期學員價 NT$4,900，之後會調漲；以全額報名。", "工具積分另自購約 NT$1,500。不保證接案、訂單或收入。",
+  "", "## 費用", price.label, "首期學員價 NT$2,900，之後會調漲；以全額報名。", "工具積分另自購約 NT$1,500。不保證接案、訂單或收入。",
   "團隊示範的 AI 角色資產（非學員成果）見課程頁「資產製作」段落；延伸教學：https://chaozhibai.ai/insights/real-video-into-ai-scene",
   "", "## 退費", ...refundRules.map(([d,r])=>`${d}：${r}`),
   `報名：${registrationUrl}`, "退費：https://course.chaozhibai.ai/refund", "公司官網：https://chaozhibai.ai", "聯絡：chaozhibai.ai@gmail.com",
