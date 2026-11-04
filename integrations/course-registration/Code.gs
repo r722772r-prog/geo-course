@@ -35,6 +35,7 @@ function doPost(e) {
   const props = PropertiesService.getScriptProperties();
   const secret = props.getProperty('REGISTRATION_SECRET');
   if (!secret || !body || body.secret !== secret) return outputRegistration_({ok: false, error: 'unauthorized'});
+  if (body.kind === 'payment-notify') return recordPayment_(body, props);
   if (body.kind !== 'course-registration' || body.version !== COURSE_REG_VERSION) return outputRegistration_({ok: false, error: 'invalid_request'});
   const d = body.data;
   if (!d || typeof d !== 'object' || d.consent !== true || d.website) return outputRegistration_({ok: false, error: 'invalid_request'});
@@ -76,4 +77,32 @@ function doPost(e) {
 
 function outputRegistration_(value) {
   return ContentService.createTextOutput(JSON.stringify(value)).setMimeType(ContentService.MimeType.JSON);
+}
+
+
+// 藍新 Notify URL 轉來的付款紀錄（由課程站 /api/newebpay-notify 驗證簽章後轉送）。只記對帳欄位，不含卡號。
+const PAYMENT_HEADERS = ['收到時間（台北）','狀態','金額','付款方式','藍新付款時間','藍新交易編號','藍新訂單編號','付款人','手機','Email','對帳備註（主辦填）'];
+function recordPayment_(body, props) {
+  const sheetId = props.getProperty('REGISTRATION_SHEET_ID');
+  if (!sheetId) return outputRegistration_({ok: false, error: 'not_configured'});
+  const d = body.data || {};
+  const book = SpreadsheetApp.openById(sheetId);
+  let sheet = book.getSheetByName('付款紀錄');
+  if (!sheet) {
+    sheet = book.insertSheet('付款紀錄');
+    sheet.appendRow(PAYMENT_HEADERS); sheet.setFrozenRows(1);
+    sheet.getRange(1,1,1,PAYMENT_HEADERS.length).setFontWeight('bold').setBackground('#e3ece6');
+  }
+  const tradeNo = String(d.TradeNo || '');
+  if (tradeNo) {
+    const rows = sheet.getLastRow() > 1 ? sheet.getRange(2,6,sheet.getLastRow()-1,1).getValues() : [];
+    if (rows.some(r => String(r[0]) === tradeNo)) return outputRegistration_({ok: true, duplicate: true});
+  }
+  const safe = v => { const t = String(v == null ? '' : v); return /^[=+\-@\t\r\n]/.test(t) ? "'"+t : t; };
+  sheet.appendRow([
+    Utilities.formatDate(new Date(),'Asia/Taipei','yyyy-MM-dd HH:mm:ss'), safe(body.status), safe(d.Amt), safe(d.PaymentType), safe(d.PayTime),
+    safe(tradeNo), safe(d.MerchantOrderNo), safe(d.PayerName || d.Name), safe(d.PayerPhone || d.Phone), safe(d.PayerEmail || d.Email), ''
+  ]);
+  SpreadsheetApp.flush();
+  return outputRegistration_({ok: true, saved: true});
 }

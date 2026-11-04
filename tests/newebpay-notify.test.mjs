@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import { createCipheriv, createHash } from 'node:crypto';
+import ts from 'typescript';
+import { readFileSync } from 'node:fs';
+const src = readFileSync('src/lib/newebpay.ts','utf8');
+const js = ts.transpile(src,{module:ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020});
+const holder={exports:{}}; import { createRequire } from 'node:module'; const require = createRequire(import.meta.url); new Function('exports','module','require',js)(holder.exports,holder,require);
+const { verifyTradeSha, decryptTradeInfo, pickPaymentFields } = holder.exports;
+const key='12345678901234567890123456789012', iv='1234567890123456';
+const payload=JSON.stringify({Status:'SUCCESS',Message:'ok',Result:{MerchantOrderNo:'EPG1',TradeNo:'T123',Amt:4900,PaymentType:'CREDIT',PayTime:'2026-11-04 22:00:00',Card6No:'400022',Card4No:'1111'}});
+const c=createCipheriv('aes-256-cbc',Buffer.from(key),Buffer.from(iv)); const enc=Buffer.concat([c.update(payload,'utf8'),c.final()]).toString('hex');
+const sha=createHash('sha256').update(`HashKey=${key}&${enc}&HashIV=${iv}`).digest('hex').toUpperCase();
+assert.ok(verifyTradeSha(enc,sha,key,iv)); assert.ok(!verifyTradeSha(enc,'00'+sha.slice(2),key,iv));
+const d=decryptTradeInfo(enc,key,iv); assert.equal(d.Status,'SUCCESS'); assert.equal(d.Result.TradeNo,'T123');
+const f=pickPaymentFields(d.Result); assert.equal(f.Amt,'4900'); assert.ok(!('Card6No' in f),'card digits never kept');
+console.log('PASS newebpay: sha verify, decrypt JSON, card fields dropped');
