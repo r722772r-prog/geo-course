@@ -32,7 +32,7 @@ https://script.google.com/u/1/home/projects/1ll8TufluvB6QuMl3hAxE0yfALi283KZpkjL
 Vercel 要加（Production）：
 - `NEWEBPAY_HASH_KEY`、`NEWEBPAY_HASH_IV`（Secret；藍新 會員中心 → 基本資料設定／商店管理 → API 串接金鑰）
 - `LINE_CHANNEL_ACCESS_TOKEN`、`LINE_CHANNEL_SECRET`（Secret；LINE Developers Messaging API）
-- `LINE_NOTIFY_TO`（Config；收通知的 LINE userId，逗號分隔。取得方式：LINE Developers 把 Webhook URL 設 `https://course.chaozhibai.ai/api/line-webhook` 並開啟，然後傳「ID」給官方帳號，機器人會回 userId）
+- `LINE_NOTIFY_TO`（Config；收通知的 LINE userId，逗號分隔。由白白／玉燕自行提供，課程站不接 LINE webhook）
 
 藍新：會員中心 → 快速收款連結 → 進階設定 → Notify URL 填 `https://course.chaozhibai.ai/api/newebpay-notify`（只對之後新建的連結生效；既有 aAXr9i 連結請在編輯頁確認有無 Notify 欄位，沒有就重建一條 4,900 連結替換）。
 
