@@ -22,3 +22,6 @@ https://script.google.com/u/1/home/projects/1ll8TufluvB6QuMl3hAxE0yfALi283KZpkjL
 4. 原網站的既有名單未遷移，須保留原名單核對。新名單可從上述專案指令碼屬性 REGISTRATION_SHEET_ID 找到。
 
 缺少環境設定時 API 回覆服務未就緒，不會顯示付款連結或宣稱已保存報名。
+
+## 2026-11-04 上線紀錄
+- 站內報名表上線；Vercel 需 COURSE_REGISTRATION_WEBAPP_URL、COURSE_REGISTRATION_SECRET 兩個環境變數（Production）。
