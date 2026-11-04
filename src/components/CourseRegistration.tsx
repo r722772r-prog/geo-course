@@ -4,6 +4,8 @@ import { useRef, useState, type FormEvent } from "react";
 import { registrationClosesAt, registrationVersion } from "@/lib/course-registration";
 import "./course-registration.css";
 
+const CITIES = ["臺北市","新北市","基隆市","桃園市","新竹市","新竹縣","苗栗縣","臺中市","彰化縣","南投縣","雲林縣","嘉義市","嘉義縣","臺南市","高雄市","屏東縣","宜蘭縣","花蓮縣","臺東縣","澎湖縣","金門縣","連江縣","海外"];
+
 export default function CourseRegistration() {
   const requestId = useRef("");
   const submitting = useRef(false);
@@ -17,7 +19,13 @@ export default function CourseRegistration() {
     if (submitting.current || saved || !form.reportValidity()) return;
     submitting.current = true; setBusy(true); setError("");
     requestId.current ||= crypto.randomUUID();
-    const fields = Object.fromEntries(new FormData(form));
+    const raw = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    // 背景欄位併進 goal 一起保存，收件端與試算表欄位不用改。
+    const pick = (k: string) => (raw[k] || "").toString().trim();
+    const parts = [`身分：${pick("role")}`, pick("gender"), pick("age"), pick("city")];
+    if (pick("social")) parts.push(`帳號：${pick("social").slice(0, 60)}`);
+    const goal = `${parts.join("｜")}\n想做：${pick("goal")}`.slice(0, 1000);
+    const fields = { name: raw.name, phone: raw.phone, email: raw.email, goal, website: raw.website || "", consent: raw.consent };
     try {
       const response = await fetch("/api/course-registration", {
         method: "POST", headers: { "Content-Type": "application/json" },
@@ -41,7 +49,12 @@ export default function CourseRegistration() {
           <label>姓名（必填）<input name="name" required maxLength={60} autoComplete="name"/></label>
           <label>手機（必填）<input name="phone" required maxLength={30} type="tel" autoComplete="tel" inputMode="tel" placeholder="0912345678" aria-describedby="phone-hint"/><small id="phone-hint">藍新付款時，請填相同姓名與手機，方便核對。</small></label>
           <label className="registration-wide">Email（必填）<input name="email" required maxLength={254} type="email" autoComplete="email"/><small>主辦以此信箱聯絡報名、付款確認與課前通知。</small></label>
-          <label className="registration-wide">你想做什麼 AI IP 帳號？（必填）<textarea name="goal" required maxLength={1000} rows={3} placeholder="例如：為自己的店設計角色、練習不露臉內容，或增加接案服務。"/></label>
+          <label>你的身分（必填）<select name="role" required defaultValue=""><option value="" disabled>請選擇</option><option>有商品或服務的老闆</option><option>接案者或工作室</option><option>公司行銷或小編</option><option>想開始做自媒體</option><option>其他</option></select></label>
+          <label>性別（必填）<select name="gender" required defaultValue=""><option value="" disabled>請選擇</option><option>女</option><option>男</option><option>不透露</option></select></label>
+          <label>年齡（必填）<select name="age" required defaultValue=""><option value="" disabled>請選擇</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55 以上</option></select></label>
+          <label>居住縣市（必填）<select name="city" required defaultValue=""><option value="" disabled>請選擇</option>{CITIES.map(c => <option key={c}>{c}</option>)}</select></label>
+          <label className="registration-wide">IG 或 Threads 帳號（選填）<input name="social" maxLength={60} placeholder="@your_account" autoComplete="off"/><small>方便我們課前先看你現在的帳號。</small></label>
+          <label className="registration-wide">你想做什麼 AI IP 帳號？（必填）<textarea name="goal" required maxLength={700} rows={3} placeholder="例如：為自己的店設計角色、練習不露臉內容，或增加接案服務。"/></label>
         </div>
         <div className="registration-trap" aria-hidden="true"><label>網站<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
         <p className="registration-plan">付款方案：<strong>全額 NT$4,900</strong>，由藍新金流處理。此表不收卡號或銀行帳號。</p>
