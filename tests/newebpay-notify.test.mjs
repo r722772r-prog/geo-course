@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 const src = readFileSync('src/lib/newebpay.ts','utf8');
 const js = ts.transpile(src,{module:ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020});
 const holder={exports:{}}; import { createRequire } from 'node:module'; const require = createRequire(import.meta.url); new Function('exports','module','require',js)(holder.exports,holder,require);
-const { verifyTradeSha, decryptTradeInfo, pickPaymentFields } = holder.exports;
+const { verifyTradeSha, decryptTradeInfo, pickPaymentFields, expectedCheckCode, verifyCheckCode, pickEpgFields, epgEventKind } = holder.exports;
 const key='12345678901234567890123456789012', iv='1234567890123456';
 const payload=JSON.stringify({Status:'SUCCESS',Message:'ok',Result:{MerchantOrderNo:'EPG1',TradeNo:'T123',Amt:4900,PaymentType:'CREDIT',PayTime:'2026-11-04 22:00:00',Card6No:'400022',Card4No:'1111'}});
 const c=createCipheriv('aes-256-cbc',Buffer.from(key),Buffer.from(iv)); const enc=Buffer.concat([c.update(payload,'utf8'),c.final()]).toString('hex');
@@ -13,4 +13,10 @@ const sha=createHash('sha256').update(`HashKey=${key}&${enc}&HashIV=${iv}`).dige
 assert.ok(verifyTradeSha(enc,sha,key,iv)); assert.ok(!verifyTradeSha(enc,'00'+sha.slice(2),key,iv));
 const d=decryptTradeInfo(enc,key,iv); assert.equal(d.Status,'SUCCESS'); assert.equal(d.Result.TradeNo,'T123');
 const f=pickPaymentFields(d.Result); assert.equal(f.Amt,'4900'); assert.ok(!('Card6No' in f),'card digits never kept');
-console.log('PASS newebpay: sha verify, decrypt JSON, card fields dropped');
+// EPG CheckCode：手冊附件二範例
+assert.equal(expectedCheckCode({Amt:'100',MerchantID:'1422967',MerchantOrderNo:'840f022',TradeNo:'14061313541640927'},'abcdefg','1234567'),'62C687AF6409E46E79769FAF54F54FE7E75AAE50BAF0767752A5C337670B8EDB');
+const epg={Status:'SUCCESS',Message:'%E6%8E%88%E6%AC%8A%E6%88%90%E5%8A%9F',MerchantID:'1422967',Amt:'100',MerchantOrderNo:'840f022',TradeNo:'14061313541640927',CheckCode:'62C687AF6409E46E79769FAF54F54FE7E75AAE50BAF0767752A5C337670B8EDB',PaymentType:'CREDIT',PayerName:'測試',PayerTel:'0912345678',Card6No:'400022',Card4No:'2222',Auth:'930637'};
+assert.ok(verifyCheckCode(epg,'abcdefg','1234567')); assert.ok(!verifyCheckCode({...epg,Amt:'101'},'abcdefg','1234567'));
+const ef=pickEpgFields(epg); assert.equal(ef.PayerTel,'0912345678'); assert.ok(!('Card6No' in ef) && !('Auth' in ef));
+assert.equal(epgEventKind(epg),'paid'); assert.equal(epgEventKind({...epg,Message:'%E5%8F%96%E8%99%9F%E6%88%90%E5%8A%9F',PaymentType:'CVS',CVSCode:'X'}),'code_issued'); assert.equal(epgEventKind({...epg,Status:'MPG01001'}),'failed');
+console.log('PASS newebpay: MPG sha/decrypt, EPG CheckCode (manual example), payer fields kept, card/auth dropped, paid vs code_issued vs failed');

@@ -81,7 +81,7 @@ function outputRegistration_(value) {
 
 
 // 藍新 Notify URL 轉來的付款紀錄（由課程站 /api/newebpay-notify 驗證簽章後轉送）。只記對帳欄位，不含卡號。
-const PAYMENT_HEADERS = ['收到時間（台北）','狀態','金額','付款方式','藍新付款時間','藍新交易編號','藍新訂單編號','付款人','手機','Email','對帳備註（主辦填）'];
+const PAYMENT_HEADERS = ['收到時間（台北）','事件','狀態','金額','付款方式','藍新交易編號','藍新訂單編號','付款人','電話','Email','留言給商店','對帳備註（主辦填）'];
 function recordPayment_(body, props) {
   const sheetId = props.getProperty('REGISTRATION_SHEET_ID');
   if (!sheetId) return outputRegistration_({ok: false, error: 'not_configured'});
@@ -95,13 +95,14 @@ function recordPayment_(body, props) {
   }
   const tradeNo = String(d.TradeNo || '');
   if (tradeNo) {
-    const rows = sheet.getLastRow() > 1 ? sheet.getRange(2,6,sheet.getLastRow()-1,1).getValues() : [];
-    if (rows.some(r => String(r[0]) === tradeNo)) return outputRegistration_({ok: true, duplicate: true});
+    const rows = sheet.getLastRow() > 1 ? sheet.getRange(2,2,sheet.getLastRow()-1,5).getValues() : [];
+    if (rows.some(r => String(r[4]) === tradeNo && String(r[0]) === String(body.event || ''))) return outputRegistration_({ok: true, duplicate: true});
   }
   const safe = v => { const t = String(v == null ? '' : v); return /^[=+\-@\t\r\n]/.test(t) ? "'"+t : t; };
+  const eventName = body.event === 'paid' ? '付款成功' : body.event === 'code_issued' ? '取號完成' : '失敗';
   sheet.appendRow([
-    Utilities.formatDate(new Date(),'Asia/Taipei','yyyy-MM-dd HH:mm:ss'), safe(body.status), safe(d.Amt), safe(d.PaymentType), safe(d.PayTime),
-    safe(tradeNo), safe(d.MerchantOrderNo), safe(d.PayerName || d.Name), safe(d.PayerPhone || d.Phone), safe(d.PayerEmail || d.Email), ''
+    Utilities.formatDate(new Date(),'Asia/Taipei','yyyy-MM-dd HH:mm:ss'), eventName, safe(body.status), safe(d.Amt), safe(d.PaymentType),
+    safe(tradeNo), safe(d.MerchantOrderNo), safe(d.PayerName || d.Name), safe(d.PayerTel || d.PayerPhone || d.Phone), safe(d.PayerEmail || d.Email), safe(d.ConsigneeRemark), ''
   ]);
   SpreadsheetApp.flush();
   return outputRegistration_({ok: true, saved: true});

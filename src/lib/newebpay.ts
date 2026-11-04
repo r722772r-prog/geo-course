@@ -39,3 +39,34 @@ export function pickPaymentFields(result: NewebPayResult) {
 export function paymentKey(secret: string, tradeNo: string) {
   return createHmac("sha256", secret).update(`payment:${tradeNo}`).digest("hex");
 }
+
+// ─── 快速收款連結（EPG）回傳：一般表單 + CheckCode（依 EPG 回傳參數手冊 附件二） ───
+export function expectedCheckCode(p: { Amt: string; MerchantID: string; MerchantOrderNo: string; TradeNo: string }, hashKey: string, hashIv: string) {
+  const query = `Amt=${p.Amt}&MerchantID=${p.MerchantID}&MerchantOrderNo=${p.MerchantOrderNo}&TradeNo=${p.TradeNo}`;
+  return createHash("sha256").update(`HashIV=${hashIv}&${query}&HashKey=${hashKey}`).digest("hex").toUpperCase();
+}
+
+export function verifyCheckCode(form: Record<string, string>, hashKey: string, hashIv: string) {
+  const need = ["Amt", "MerchantID", "MerchantOrderNo", "TradeNo", "CheckCode"];
+  if (need.some(k => !form[k])) return false;
+  const expected = Buffer.from(expectedCheckCode({ Amt: form.Amt, MerchantID: form.MerchantID, MerchantOrderNo: form.MerchantOrderNo, TradeNo: form.TradeNo }, hashKey, hashIv));
+  const given = Buffer.from(String(form.CheckCode).toUpperCase());
+  return expected.length === given.length && timingSafeEqual(expected, given);
+}
+
+// EPG 只留對帳欄位；卡號、授權碼、回應碼不留。
+export function pickEpgFields(form: Record<string, string>) {
+  const keys = ["Status", "Message", "MerchantOrderNo", "TradeNo", "Amt", "PaymentType", "PayerName", "PayerTel", "PayerEmail", "ConsigneeRemark", "Inst", "InvoiceType", "InvoiceName", "InvoiceUBN", "Quantity", "UnitPrice", "CVSCode", "BankCode", "CodeNo", "ExpireDate"];
+  const out: Record<string, string> = {};
+  for (const k of keys) if (form[k] !== undefined && form[k] !== "") out[k] = String(form[k]);
+  return out;
+}
+
+// 取號完成（ATM／超商拿到繳費號碼）不是付款完成。
+export function epgEventKind(form: Record<string, string>): "paid" | "code_issued" | "failed" {
+  const msg = decodeURIComponentSafe(form.Message || "");
+  if (form.Status !== "SUCCESS") return "failed";
+  if (/取號/.test(msg) || form.CVSCode || form.CodeNo || form.BankCode) return "code_issued";
+  return "paid";
+}
+function decodeURIComponentSafe(s: string) { try { return decodeURIComponent(s.replace(/\+/g, " ")); } catch { return s; } }

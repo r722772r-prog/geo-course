@@ -27,7 +27,7 @@ https://script.google.com/u/1/home/projects/1ll8TufluvB6QuMl3hAxE0yfALi283KZpkjL
 - 站內報名表上線；Vercel 需 COURSE_REGISTRATION_WEBAPP_URL、COURSE_REGISTRATION_SECRET 兩個環境變數（Production）。
 
 ## 藍新 Notify URL 自動付款通知（2026-11-04 加）
-流程：藍新付款成功 → POST `https://course.chaozhibai.ai/api/newebpay-notify` → 課程站驗 TradeSha、解密 TradeInfo → ①轉送 Apps Script（kind `payment-notify`）寫入試算表「付款紀錄」分頁 ②LINE 推播給 `LINE_NOTIFY_TO`。卡號欄位一律丟棄。
+流程：藍新付款成功 → POST `https://course.chaozhibai.ai/api/newebpay-notify`（EPG 快速收款連結格式：一般表單＋CheckCode，依 EPG 回傳參數手冊；會帶 PayerName／PayerTel／PayerEmail）→ 課程站驗 CheckCode（MPG 的 TradeInfo／TradeSha 格式保留為備用）→ ①轉送 Apps Script（kind `payment-notify`）寫入試算表「付款紀錄」分頁 ②LINE 推播給 `LINE_NOTIFY_TO`。卡號欄位一律丟棄。
 
 Vercel 要加（Production）：
 - `NEWEBPAY_HASH_KEY`、`NEWEBPAY_HASH_IV`（Secret；藍新 會員中心 → 基本資料設定／商店管理 → API 串接金鑰）
