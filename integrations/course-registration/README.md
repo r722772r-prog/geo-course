@@ -39,3 +39,4 @@ Vercel 要加（Production）：
 Apps Script：Code.gs 新增 `recordPayment_`，需「部署 → 管理部署 → 編輯 → 新版本」重新部署同一個網址。
 
 測試：建一條 10 元測試連結，自己刷一筆，確認 LINE 收到推播、試算表「付款紀錄」多一列，再於藍新退款。
+- 2026-11-04 Vercel 七個變數就緒（含 NEWEBPAY_HASH_KEY/IV、LINE_CHANNEL_ACCESS_TOKEN/SECRET、LINE_NOTIFY_TO），重新部署。
