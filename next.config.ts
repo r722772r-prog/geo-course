@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [["remark-frontmatter", { type: "yaml", marker: "-" }]],
+    remarkPlugins: [["remark-frontmatter", { type: "yaml", marker: "-" }], "remark-gfm"],
   },
 });
 

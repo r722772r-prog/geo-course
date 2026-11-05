@@ -1,3 +1,4 @@
+import { getGuides } from "@/lib/guides";
 import { courseTitle, days, getPricing, notes, outcomes, positioning, registrationUrl, refundRules, takeaways, units } from "@/data/course";
 export const dynamic = "force-dynamic";
 export function GET() {
@@ -15,6 +16,7 @@ export function GET() {
   "", "## 注意事項", ...notes.map(n => `- ${n}`),
   "", "## 費用", price.label, "首期學員價 NT$2,900，之後會調漲；以全額報名。", "工具積分另自購約 NT$1,500。不保證接案、訂單或收入。",
   "團隊示範的 AI 角色資產（非學員成果）見課程頁「資產製作」段落；延伸教學：https://chaozhibai.ai/insights/real-video-into-ai-scene",
+  "", "## 學習文章（報名前先讀）", ...getGuides().map(g => `- ${g.frontmatter.title}：https://course.chaozhibai.ai/guides/${g.slug}`),
   "", "## 退費", ...refundRules.map(([d,r])=>`${d}：${r}`),
   `報名：${registrationUrl}`, "退費：https://course.chaozhibai.ai/refund", "公司官網：https://chaozhibai.ai", "聯絡：chaozhibai.ai@gmail.com",
  ].join("\n"),{headers:{"Content-Type":"text/plain; charset=utf-8","Cache-Control":"no-store"}});

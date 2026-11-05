@@ -1,0 +1,67 @@
+/* 學習文章（/guides）樣式：沿用課程站配色 #F8F5F2 / #1A1A1A / #AE445A */
+.guide-shell { min-height:100vh; background:#F8F5F2; color:#1A1A1A; }
+.guide-topline { height:3px; background:#AE445A; }
+.guide-nav { max-width:1024px; margin:auto; padding:20px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.guide-nav .brand { font-weight:900; font-size:18px; }
+.guide-nav-links { display:flex; align-items:center; gap:18px; font-size:15px; }
+.guide-nav-links .cta { padding:10px 16px; }
+.guide-crumb { max-width:760px; margin:8px auto 0; padding:0 24px; font-size:14px; color:#615a56; display:flex; gap:8px; flex-wrap:wrap; }
+.guide-crumb a { text-decoration:underline; text-underline-offset:4px; }
+.guide-main { max-width:760px; margin:auto; padding:32px 24px 64px; }
+
+/* 列表頁 */
+.guide-list-head h1 { font-size:clamp(30px,4vw,44px); margin:8px 0 16px; }
+.guide-list-head p { font-size:18px; color:#443e3b; max-width:640px; }
+.guide-list { list-style:none; padding:0; margin:36px 0 0; display:grid; gap:18px; }
+.guide-card { background:white; border:1px solid #e4dcd5; border-left:4px solid #AE445A; padding:26px 28px; }
+.guide-card h2 { font-size:22px; margin:0 0 10px; line-height:1.5; }
+.guide-card h2 a { text-decoration:none; }
+.guide-card h2 a:hover { color:#AE445A; }
+.guide-card p { font-size:16px; color:#443e3b; margin:0; line-height:1.8; }
+.guide-card time { display:block; font-size:13px; color:#615a56; margin-top:12px; font-family:var(--font-geist-mono), monospace; }
+
+/* 文章頁 */
+.guide-article-head time { font-size:14px; color:#615a56; font-family:var(--font-geist-mono), monospace; }
+.guide-article-head h1 { font-size:clamp(28px,4vw,40px); line-height:1.45; margin:10px 0 20px; text-wrap:balance; }
+.guide-byline { font-size:15px; color:#615a56; }
+.guide-summary { margin:28px 0 36px; padding:22px 26px; background:#fff; border:1px solid #e4dcd5; border-left:4px solid #AE445A; font-size:18px; line-height:1.9; }
+.guide-summary strong { display:block; font-size:12px; letter-spacing:.17em; color:#AE445A; margin-bottom:8px; }
+.guide-body { font-size:18px; line-height:1.95; }
+.guide-body h2 { font-size:clamp(22px,2.6vw,27px); margin:48px 0 16px; padding-top:8px; border-top:1px solid #d8d0ca; }
+.guide-body h3 { font-size:20px; margin:28px 0 10px; }
+.guide-body p { margin:0 0 18px; }
+.guide-body ul, .guide-body ol { padding-left:1.4em; margin:0 0 20px; }
+.guide-body li { margin:6px 0; }
+.guide-body li::marker { color:#AE445A; font-weight:700; }
+.guide-body table { margin:16px 0 24px; font-size:16px; background:white; }
+.guide-body th, .guide-body td { padding:12px 14px; vertical-align:top; }
+.guide-body thead th { background:#1A1A1A; color:white; }
+.guide-body blockquote { margin:20px 0; padding:14px 20px; border-left:3px solid #AE445A; background:#fff; color:#443e3b; }
+.guide-body a { color:#AE445A; text-decoration:underline; text-underline-offset:4px; }
+.guide-body strong { font-weight:700; }
+.guide-table-scroll { overflow-x:auto; }
+.guide-faq { margin-top:56px; border-top:2px solid #1A1A1A; padding-top:24px; }
+.guide-faq h2 { font-size:24px; margin-bottom:8px; }
+.guide-faq details { border-top:1px solid #d8d0ca; padding:18px 0; }
+.guide-faq summary { cursor:pointer; font-weight:700; font-size:18px; line-height:1.6; }
+.guide-faq details p { margin-top:12px; font-size:17px; line-height:1.9; color:#443e3b; }
+.guide-related { margin-top:48px; }
+.guide-related h2 { font-size:20px; margin-bottom:12px; }
+.guide-related ul { list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.guide-related a { text-decoration:underline; text-underline-offset:4px; }
+
+/* 文章底部課程 CTA */
+.guide-course-cta { background:#eee6df; padding:56px 24px; text-align:center; }
+.guide-course-cta h2 { font-size:clamp(22px,3vw,30px); margin-bottom:14px; }
+.guide-course-cta p { max-width:620px; margin:auto; font-size:17px; }
+.guide-cta-row { display:flex; gap:16px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:24px; }
+.guide-cta-ghost { text-decoration:underline; text-underline-offset:4px; font-weight:700; }
+
+@media (max-width:640px) {
+  .guide-nav { padding:16px; }
+  .guide-nav-links { gap:12px; font-size:14px; }
+  .guide-main { padding:20px 18px 48px; }
+  .guide-body { font-size:17px; }
+  .guide-summary { font-size:17px; padding:18px; }
+  .guide-card { padding:20px; }
+}
