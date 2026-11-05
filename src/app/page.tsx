@@ -3,7 +3,6 @@ import "./taste-refinement.css";
 import CourseRegistration from "@/components/CourseRegistration";
 import ContentArt from "@/components/ContentArt";
 
-import { learningGuides } from "@/data/learning-guides";
 import { getGuides } from "@/lib/guides";
 import CourseNav from "@/components/CourseNav";
 import type { Metadata } from "next";
@@ -51,7 +50,7 @@ export default function CourseHome() {
         <div className="reference-card"><h3>課前準備</h3><ul><li><strong>一台電腦</strong>能上網、有鏡頭與麥克風；手機不適合操作。12/10（四）晚上 30 分鐘課前檢查會。</li><li><strong>想好帳號要做什麼</strong>自己的店、接案用或業配用，準備 3–5 個想做的題目。角色、三視圖與帳號都在課堂上做。</li><li><strong>工具費另計</strong>AI 工具積分自購約 NT$1,500，工具清單與註冊教學 12/6 前寄出。</li></ul></div>
         <div className="reference-card reference-card-notes"><h3>課程注意事項</h3><ul>{notes.map(note=><li key={note}>{note}</li>)}</ul></div>
       </div></Section>
-      <Section id="learning-guides" title="報名前，先看懂製作方法"><p>依照你的問題選一篇先讀，再回本頁對照課綱與準備事項。</p><ul className="learning-guide-links">{getGuides().map(guide => <li key={guide.slug}><a href={`/guides/${guide.slug}`}>{guide.frontmatter.title} →</a><p>{guide.frontmatter.description}</p></li>)}</ul><p className="note"><a href="/guides">全部學習文章 →</a></p><h3>官網延伸教學</h3><p className="note">以下為超直白行銷官網的延伸教學，單篇效果示例不代表本期課程會逐一教授。</p><ul className="learning-guide-links">{learningGuides.map(guide => <li key={guide.slug}><a href={`https://chaozhibai.ai/insights/${guide.slug}`}>{guide.title} →</a><p>{guide.description}</p></li>)}</ul><p className="note"><a href="#modules">回到本期課綱 →</a> · <a href="#fees">確認費用與報名 →</a> · <a href="https://chaozhibai.ai/insights#course-guides">查看全部課程準備文章 →</a></p></Section>
+      <Section id="learning-guides" title="報名前，先看懂製作方法"><p>依照你的問題選一篇先讀，再回本頁對照課綱與準備事項。</p><ul className="learning-guide-links">{getGuides().slice(0,8).map(guide => <li key={guide.slug}><a href={`/guides/${guide.slug}`}>{guide.frontmatter.title} →</a><p>{guide.frontmatter.description}</p></li>)}</ul><p className="note"><a href="/guides">全部學習文章（含官網同步的製作教學）→</a> · <a href="#modules">回到本期課綱 →</a> · <a href="#fees">確認費用與報名 →</a></p></Section>
       <Section id="faq" title="報名前，你可能想知道"><div className="faqs">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div><p className="note"><a href={lineUrl}>還有問題？加入官方 LINE 詢問</a></p></Section>
 
     </main>

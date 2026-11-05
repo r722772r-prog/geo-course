@@ -1,0 +1,185 @@
+---
+title: "起跑子彈時間怎麼做？四份參考、六鏡頭與表情光線教學"
+date: "2026-10-13"
+dateModified: "2026-10-24"
+description: "用起跑、正面跑步、身份與全身四份參考，規劃同一次起跑的六鏡慢動作重播。提供完整指令、表情與光源安排，以及人物、影子和聲音的驗收清單。"
+summary: "起跑子彈時間可以用四份參考分別交代動作、表情、人物身份與全身造型，再用六鏡頭從不同角度重看同一次起跑。不是把整支影片放慢，也不是將不同次跑步任意接起來。"
+source: "https://chaozhibai.ai/insights/seedance-running-bullet-time"
+faqs:
+  - q: "這個子彈時間案例，共有幾個鏡頭？"
+    a: "共有六鏡：一鏡開場、四鏡慢動作重播、一鏡恢復速度收尾。鏡頭總數與角度效果名稱分開計算，以分鏡表與指令 Shot 1–6 為準。"
+  - q: "子彈時間一定要用固定倍率嗎？"
+    a: "不必。此處是視覺目標，不是精確速度量測；生成結果仍要看動作與剪接。"
+  - q: "只錯一鏡，要改整段 Prompt 嗎？"
+    a: "先定位錯誤與相關描述，保留其他可用條件；是否能局部補救，再依工具與結果判斷。"
+---
+
+起跑子彈時間可以用四份參考分別交代動作、表情、人物身份與全身造型，再用六鏡頭從不同角度重看同一次起跑。不是把整支影片放慢，也不是將不同次跑步任意接起來。
+
+本文以本站起跑案例說明六段時間目標與完整製作指令。這是生成視角與運動表現的規劃，不是現場多機拍攝或物理量測；目前平台功能與輸入條件需要另行確認。
+
+## 四份素材，各自解決什麼問題？
+
+先讓素材有明確角色，避免自拍照的微笑被套用到全程衝刺。每份素材皆需確認適用的使用範圍。
+
+<div className="guide-table-scroll">
+
+| 素材 | 案例用途 | 優先核對 |
+|---|---|---|
+| 起跑影片 | 起跑、場所與原光源 | 動作完整與行進方向 |
+| 正面跑步影片 | 呼吸、臉頰、頭髮與肩膀 | 表情不是固定微笑 |
+| 身份照片 | 臉型與五官 | 不把自拍表情當整段表演 |
+| 正面全身照 | 衣服、鞋與身體比例 | 與每鏡造型一致 |
+
+</div>
+
+先辨認誰負責什麼，再接入目前支援的模式。原紀錄的素材標記是示例名稱，必須對應實際上傳檔案。
+
+## 起跑案例的六鏡結構與光線安排
+
+先看六鏡的時間表，再看表情與光源的描述。鏡頭移動不代表太陽也跟著移動，人物朝向與影子仍應維持同一世界關係。
+
+## 先理解：子彈時間不是把整支影片放慢
+
+這裡的「子彈時間」是讓起跑瞬間近乎停住，同時改變觀看角度。鞋底蹬地、頭髮飄起、褲管擺動，都有時間被看清楚；最後再回到真實速度，讓人物跑遠。
+
+**這份分鏡共有六鏡：一鏡起跑開場、四鏡慢動作重播、一鏡速度恢復收尾。** 不是把六段不同的跑步動作排在一起，而是用多個視角重新看同一次起跑。
+
+原紀錄以「5 個角度慢動作」命名；本文按實際的 Shot 1–6 說明，避免把五種效果視角誤認為整支只有五鏡。這是 AI 生成的視角規劃，仍需檢查人物與動作是否接得起來。
+
+## 四份參考，各自只負責一件事
+
+![起跑影片負責動作場景光線，正面跑步影片負責表情，自拍負責臉型，全身照負責比例與穿搭；四份素材接到同一個生成節點。](https://chaozhibai.ai/article-covers/running-reference-flow.png)
+
+*提供的製作流程圖｜四個參考節點接到同一個生成節點。圖片提供細節參考。*
+
+- **@視頻1｜起跑影片，5 秒：**決定蹲低、蹬地、起跑的動作，以及公園道路、光線與原始機位。
+- **@視頻2｜正面跑步影片，2.5 秒：**決定跑步時嘴部、臉頰、頭髮與肩膀怎麼動。
+- **@圖片1｜自拍：**只用來固定臉型、五官與人物身份，不把自拍的微笑套到整段衝刺。
+- **@圖片2｜正面全身照：**固定人物比例、衣服、褲子與鞋子。
+
+影片與照片不是越多越好，而是要交代每份素材的用途。這個案例的關鍵補充，是讓正面跑步影片專門負責表情，避免模型一直沿用自拍照的靜態笑容。
+
+## 先看六鏡頭，再看完整指令
+
+![六個截圖依序展示後方起跑、環繞正面、鞋底特寫、正面表情、正上方俯拍及跑遠收尾。](https://chaozhibai.ai/article-covers/running-six-shots.png)
+
+*製作畫面對照｜上方秒數是擷取時間，不是每一鏡的長度。圖片提供細節參考。*
+
+- **0–2 秒｜起跑開場：**後方腰高的廣角畫面。人物回頭一笑，再轉向前方起跑，以真實速度交代動作。
+- **2–5 秒｜環繞人物：**起跑瞬間放慢，鏡頭從左側繞到正面，看到人物表情和上衣。
+- **5–7 秒｜鞋底蹬地：**鏡頭放在鞋子的高度，看鞋底彎曲、砂粒飛起與褲管擺動。
+- **7–10 秒｜正面表情：**鏡頭在前方往後移，看人物張嘴呼吸、臉頰隨腳步震動。
+- **10–12 秒｜正上方俯拍：**從上往下看起跑與向前延伸的影子，鏡頭緩慢旋轉上升。
+- **12–15 秒｜跑遠收尾：**從後方低角度跟拍，慢動作逐漸恢復正常速度，人物跑向遠方。
+
+「硬切」就是直接切換到下一鏡，不加融化或變形轉場。本例希望在 2、5、7、10、12 秒切鏡；秒數是規劃目標，生成後要用實際影片檢查。
+
+## 跑步表情僵硬，要寫具體的身體動作
+
+製作紀錄提到，第一版出現「閉嘴微笑」的表情；第二版加入正面跑步影片，並把衝刺時的表情改成可看見的動作。這是既有紀錄中的修正方向，未在本文另作重生成測試，不能視為單一指令的效果保證。
+
+> **模糊寫法：**跑得很用力，表情自然、有活力。
+> 
+> **具體寫法：**起跑時嘴唇分開，短促吐氣，眉頭因用力稍微收緊；每次落腳帶動臉頰與下巴震動，頭髮掠過臉部，肩膀隨擺臂收緊。
+
+這些句子讓模型知道「自然」要表現在哪裡。不要同時要求衝刺全程保持甜美微笑，又要求用力喘氣。
+
+**開場回頭一笑可以保留，開始衝刺後再切換成用力呼吸。** 原紀錄雖提到刪除 smile，但完整指令仍保留開場 grin；兩段表演的時間與目的要分清楚。
+
+## 太陽固定，換角度也不能換光線方向
+
+這個例子設定人物背對太陽向前跑，因此影子往前延伸。鏡頭換位置時，太陽仍留在同一個世界位置。
+
+- **從正面看人物：**人物背光，頭髮邊緣有亮光，太陽可能在頭後方形成光暈。
+- **從後方看人物：**太陽在鏡頭後面，前方道路較均勻明亮，人物影子向前延伸。
+- **從正上方看：**同樣要看見影子沿跑步方向往前，不能突然翻到身後。
+
+不要把所有角度都寫成「正面柔光」。先確認原片的太陽方向，再讓每個鏡頭符合這個方向；光暈大小可以變，光源位置不能隨切鏡亂跳。
+
+## 接好素材，再複製 Prompt
+
+這份製作紀錄使用 **LibTV・Seedance，四個參考節點接到同一個生成節點**。設定 15 秒、9:16，一次生成一支影片，不需要為每個角度各送出一次。
+
+先確認目前節點能接收這四份參考，再貼指令。@視頻1、@視頻2、@圖片1、@圖片2 是本例的素材名稱，請換成介面實際標記。
+
+範例服裝是白色印花上衣、淺藍寬牛仔褲與白色運動鞋。如果你的照片不同，先修改服裝與場景描述。模型、畫質與輸入選項，以平台畫面顯示為準。
+
+## 起跑子彈時間 Prompt｜15 秒六鏡頭
+
+先接入四份參考，替換素材標記、人物服裝與場景，再確認15秒和9:16設定。
+
+### 起跑子彈時間 Prompt｜15 秒六鏡頭
+
+~~~text
+Use @視頻1 for the crouch-and-launch action, the location, the lighting and the camera height. Use @視頻2 for how her face, hair and shoulders move while she runs toward the camera. Use @圖片1 for her identity only: face shape, eyes, nose, lips, bangs and makeup. Use @圖片2 for her full-body proportions and outfit from the front.
+
+The woman, matching @圖片1 and @圖片2: long dark-brown hair with soft wispy bangs, rosy blush makeup and coral lips; a white cropped baby tee with a vintage pink-and-red cupcake graphic printed on the chest; light-blue high-waist wide-leg denim jeans; white sneakers with black crossed side stripes and gum-brown soles; a black beaded bracelet on her left wrist.
+
+Location, matching @視頻1: a sunny park road, dark grey asphalt with white edge lines, bright green lamp posts, green grassy slopes with young trees, clear deep-blue sky. The sun sits on the side of the original camera in @視頻1, so she always runs away from the sun and her shadow always stretches ahead of her in the direction she runs. In shots from in front of her she is backlit, with a glowing rim on her hair and a soft sun flare behind her head. In shots from behind her the sun is behind the camera, and the road ahead of her is evenly lit. The sun direction stays the same in every shot.
+
+STRUCTURE: a six-shot sports-replay montage. Shot 1 establishes the crouch-and-launch action at real speed. Shots 2 to 5 revisit the same launch moment from four different views in extreme slow motion. Shot 6 returns to a low rear chase, ramps from slow motion to real speed and lets her run into the distance. Hard cuts only at the stated times; hold each view until the next cut. The same action, identity, outfit and sun direction remain consistent.
+
+PERFORMANCE (the expression of a real all-out sprint, as in @視頻2):
+At the launch her jaw sets, her lips part, and she pushes a sharp exhale out through her mouth; her brows draw slightly together with effort, her eyes lock on the road ahead and narrow in the bright light, her nostrils flare.
+In slow motion every footfall sends a visible ripple up through her cheeks and lips, her chin bounces with the impact, loose strands of hair cross her face and catch on her lips, her neck and shoulders tighten with each drive of her arms.
+Her mouth keeps changing shape with her breathing from frame to frame; her face is alive and in motion the whole time.
+
+CORE EFFECT: bullet time. At the instant she springs up, time slows about 10x: her long hair lifts and fans out strand by strand, the denim hem ripples, tiny grains of grit lift off the asphalt and hang in the sunlight, her rear sneaker sole flexes against the ground, her cheeks ripple from the force of the first stride.
+
+[00:00-02.00] Shot 1, real speed, matching @視頻1: low wide shot from behind at waist height. She crouches in the left third of the frame, glances back over her shoulder at the camera with a quick bright grin, turns forward, and springs up. Hard cut.
+[02.00-05.00] Shot 2, bullet time orbit: time almost frozen at the instant she springs up, rear foot pushing off, body leaning forward, hair suspended like a fan, mouth open mid-exhale, brows drawn with effort. The camera orbits 180 degrees around her at waist height, from her left side to her front, revealing her face and the cupcake print. Hard cut.
+[05.00-07.00] Shot 3, ground level at sneaker height, side view: her sneaker drives off the asphalt in extreme slow motion, sole flexing, grit and dust lifting, denim hem rippling, a long sharp shadow across the white edge line. Hard cut.
+[07.00-10.00] Shot 4, front close-up: the camera is ahead of her on the road, moving backward at chest height. She rises out of the crouch and drives toward the camera in extreme slow motion, lips parted and breathing hard, cheeks rippling with each footfall, hair whipping back and strands crossing her face, eyes fixed past the camera. Her face and its motion match @視頻2. Hard cut.
+[10.00-12.00] Shot 5, directly overhead, top-down: she bursts out of the crouch in the center of the frame, arms pumping, her shadow stretching ahead of her across the white lane line, the camera slowly rotating and rising. Hard cut.
+[12.00-15.00] Shot 6, low chase from behind at knee height, the sun behind the camera: slow motion ramps up to real speed as she sprints away down the road toward the green lamp posts, her long shadow running out ahead of her on the evenly lit asphalt, shoulders rising and falling with fast breaths, and she runs off into the distance.
+
+SOUND: no music, no voice, no subtitles. On every hard cut, at 00:02.00, 00:05.00, 00:07.00, 00:10.00 and 00:12.00, a deep whoosh plus a low heartbeat-like thump. During slow motion: a stretched, deep breath in and a sharp exhale, slowed footstep impacts, sneaker scuff and grit on asphalt, light wind. In the last shot: real-speed fast breathing, footsteps and wind.
+
+Photoreal, cinematic, high-speed camera look, vertical 9:16. In every shot her identity, hair and outfit match @圖片1 and @圖片2, the cupcake print stays on the T-shirt, she is the only person on the road, and the frame stays free of added text and logos.
+~~~
+
+本文保留提供的英文指令，並修正總鏡數說明，讓六段時間表與整體結構一致。沒有加入原紀錄未提供的固定解析度或價格。
+
+## 完成後，用四個問題檢查
+
+- **是否在看同一次起跑？**慢動作鏡頭要維持同一組動作，不能突然從蹲姿變成不相干的跳躍。
+- **人物和穿搭是否一致？**核對臉型、上衣印花、牛仔褲、鞋子與手腕配件。
+- **表情是否真的在動？**看嘴部呼吸、臉頰震動和髮絲反應，避免整段像靜態照片被平移。
+- **影子與聲音是否對得上？**影子向前，腳步與切鏡聲跟上動作；最後恢復正常速度時，呼吸和腳步也要恢復節奏。
+
+如果只有一個鏡頭不理想，先找出是參考素材、構圖、動作還是光線問題，再改對應描述。不要一次改完所有設定，否則下一次很難知道是哪一項起了作用。
+
+## 哪些錯誤應分開修？
+
+先定位是身份、動作、表情還是光線。這份紀錄提供修正思路，不保證增加某句文字就能重現結果。
+
+<div className="guide-table-scroll">
+
+| 問題 | 先查 | 處理方向 |
+|---|---|---|
+| 衝刺一直保持微笑 | 身份照與表情參考的分工 | 說明呼吸與用力動作，核對時間段 |
+| 每鏡像不同次起跑 | 六鏡任務與動作起點 | 確認都是同一發力時刻的重播 |
+| 影子切鏡後反向 | 原光源、行進與鏡位 | 固定世界光源，分鏡說明相對關係 |
+| 衣服或鞋子改變 | 全身參考與各鏡結果 | 核對同款與配件，替換錯誤段落 |
+| 切鏡聲與動作不合 | 實際切點與聲音 | 依成片重對聲音，不只按預期秒數 |
+
+</div>
+
+## 生成後怎麼逐鏡驗收？
+
+每鏡記任務是否完成、身份與造型、動作連續、光線影子，以及是否可用。停格看細節，再正常播放，確認慢動作與恢復速度的關係。
+
+### 生成後怎麼逐鏡驗收？
+
+~~~text
+鏡號與實際時間段：
+本鏡是否仍在重看同一次起跑：
+人物／服裝／鞋子核對：
+表情與呼吸是否符合任務：
+光源與影子是否一致：
+聲音與切點：
+採用、重做或替換原因：
+~~~
+
+想整理長片的素材與版本，可看 [素材重用與紀錄](https://chaozhibai.ai/insights/reuse-product-video-assets)；完整檢查使用 [三輪審片方法](https://chaozhibai.ai/insights/review-first-product-video)。

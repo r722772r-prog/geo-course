@@ -15,6 +15,7 @@ export interface GuideFrontmatter {
   summary: string;
   faqs?: GuideFaq[];
   related?: string[];
+  source?: string; // 官網原文網址：有的話 canonical 指回官網，頁面標示同步刊登
 }
 export interface GuideEntry { slug: string; frontmatter: GuideFrontmatter }
 

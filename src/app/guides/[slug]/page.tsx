@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${guide.frontmatter.title}｜AI IP 兩日班`,
     description: guide.frontmatter.description,
-    alternates: { canonical: url },
+    alternates: { canonical: guide.frontmatter.source ?? url },
     openGraph: { title: guide.frontmatter.title, description: guide.frontmatter.description, type: "article", url, publishedTime: guide.frontmatter.date, modifiedTime: guide.frontmatter.dateModified, images: [{ url: siteConfig.og.image }] },
   };
 }
@@ -72,6 +72,7 @@ export default async function GuidePage({ params }: Props) {
           <time dateTime={fm.date}>{fm.date}</time>{fm.dateModified && fm.dateModified !== fm.date && <time dateTime={fm.dateModified}> · 更新 {fm.dateModified}</time>}
           <h1>{fm.title}</h1>
           <p className="guide-byline">作者：超直白行銷 白白（全平台累積 200 萬真實粉絲，AI IP 兩日班主講）</p>
+          {fm.source && <p className="guide-byline">本文同步刊登於<a href={fm.source}>超直白行銷官網</a>，課程站版本供報名前閱讀。</p>}
         </header>
         <section className="guide-summary" aria-label="重點摘要"><strong>先講答案</strong>{fm.summary}</section>
         <div className="guide-body"><Body /></div>
