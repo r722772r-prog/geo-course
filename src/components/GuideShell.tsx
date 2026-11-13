@@ -26,7 +26,7 @@ export default function GuideShell({ children, crumb }: { children: React.ReactN
       <section className="guide-course-cta" aria-label="課程報名">
         <p className="eyebrow">想自己做一個 AI IP 帳號</p>
         <h2>{courseShortName}｜12/12–12/13 全線上實作</h2>
-        <p>兩天做出一個設定完整的角色、一組帳號、第一支影片。{price.label}。不保證接案、訂單或收入。</p>
+        <p>兩天做出一個設定完整的角色、一組帳號、第一支影片。{price.label}。課程不替學員帶來接案、訂單或收入。</p>
         <div className="guide-cta-row"><Link href="/#fees" className="cta">看費用與報名</Link><Link href="/#modules" className="guide-cta-ghost">先看兩天課綱 →</Link></div>
       </section>
       <footer className="course-footer">
