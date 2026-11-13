@@ -42,7 +42,7 @@ export default function CourseRegistration() {
     } finally { submitting.current = false; setBusy(false); }
   }
   return <div className="course-registration">
-    <div className="registration-intro"><p className="eyebrow">REGISTRATION</p><h3>先留下資料，再完成付款</h3><p>AI IP 兩日班｜2026/12/12–13 全程線上，12/23 晚上回顧。</p><p><strong>首期學員價 NT$2,900，之後會調漲。</strong><br/>工具費另自購約 NT$1,500。付款截止為 12/11 23:59。</p><ol aria-label="報名步驟"><li>填寫下方資料</li><li>收件成功後前往藍新</li><li>主辦核款後通知確認</li></ol></div>
+    <div className="registration-intro"><p className="eyebrow">REGISTRATION</p><h3>先留下資料，再完成付款</h3><p>AI IP 兩日班｜2026/12/12–13 全程線上，12/23 晚上回顧。</p><p><strong>首期學員價 NT$2,900，之後逐步調漲。</strong><br/>工具費另自購約 NT$1,500。付款截止為 12/11 23:59。</p><ol aria-label="報名步驟"><li>填寫下方資料</li><li>收件成功後前往藍新</li><li>主辦核款後通知確認</li></ol></div>
     {!saved ? <form onSubmit={submit} aria-label="AI IP 兩日班報名表">
       <fieldset disabled={busy}><legend className="sr-only">報名與聯絡資料</legend>
         <div className="registration-fields">
