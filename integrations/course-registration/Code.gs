@@ -36,6 +36,7 @@ function doPost(e) {
   const secret = props.getProperty('REGISTRATION_SECRET');
   if (!secret || !body || body.secret !== secret) return outputRegistration_({ok: false, error: 'unauthorized'});
   if (body.kind === 'payment-notify') return recordPayment_(body, props);
+  if (body.kind === 'story-request') return recordStoryRequest_(body, props);
   if (body.kind !== 'course-registration' || body.version !== COURSE_REG_VERSION) return outputRegistration_({ok: false, error: 'invalid_request'});
   const d = body.data;
   if (!d || typeof d !== 'object' || d.consent !== true || d.website) return outputRegistration_({ok: false, error: 'invalid_request'});
@@ -106,4 +107,37 @@ function recordPayment_(body, props) {
   ]);
   SpreadsheetApp.flush();
   return outputRegistration_({ok: true, saved: true});
+}
+
+
+// 官網「申請免費故事版」表單（由課程站 /api/story-request 轉送）。寫進同一份試算表的「故事版申請」分頁。
+const STORY_HEADERS = ['申請編號','收到時間（台北）','申請方式','品牌／商品','給誰看','看完做什麼','最想讓他知道的一件事','放哪個平台','聯絡稱呼','LINE／聯絡方式','商品照片連結','延後公開至','處理狀態（主辦填）','備註（主辦填）'];
+function recordStoryRequest_(body, props) {
+  const sheetId = props.getProperty('REGISTRATION_SHEET_ID');
+  if (!sheetId) return outputRegistration_({ok: false, error: 'not_configured'});
+  const d = body.data || {};
+  const id = String(body.id || '');
+  if (!/^SB-[A-F0-9]{10}$/.test(id)) return outputRegistration_({ok: false, error: 'invalid_request'});
+  const lock = LockService.getScriptLock();
+  if (!lock.tryLock(10000)) return outputRegistration_({ok: false, error: 'busy'});
+  try {
+    const book = SpreadsheetApp.openById(sheetId);
+    let sheet = book.getSheetByName('故事版申請');
+    if (!sheet) {
+      sheet = book.insertSheet('故事版申請');
+      sheet.appendRow(STORY_HEADERS); sheet.setFrozenRows(1);
+      sheet.getRange(1,1,1,STORY_HEADERS.length).setFontWeight('bold').setBackground('#f1e4e1');
+    }
+    const ids = sheet.getLastRow() > 1 ? sheet.getRange(2,1,sheet.getLastRow()-1,1).getValues() : [];
+    if (ids.some(r => String(r[0]) === id)) return outputRegistration_({ok: true, saved: true, duplicate: true});
+    const safe = v => { const t = String(v == null ? '' : v).slice(0, 600); return /^[=+\-@\t\r\n]/.test(t) ? "'"+t : t; };
+    sheet.appendRow([
+      id, Utilities.formatDate(new Date(),'Asia/Taipei','yyyy-MM-dd HH:mm:ss'), d.mode === 'private' ? '保密付費洽詢' : '免費故事版',
+      safe(d.brand), safe(d.audience), safe(d.action), safe(d.message), safe(d.platform), safe(d.name), safe(d.line), safe(d.photoUrl), safe(d.release), '待聯絡', ''
+    ]);
+    SpreadsheetApp.flush();
+    return outputRegistration_({ok: true, saved: true});
+  } catch (_) {
+    return outputRegistration_({ok: false, error: 'storage_unavailable'});
+  } finally { lock.releaseLock(); }
 }

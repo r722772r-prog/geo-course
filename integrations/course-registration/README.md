@@ -40,3 +40,16 @@ Apps Script：Code.gs 新增 `recordPayment_`，需「部署 → 管理部署 �
 
 測試：建一條 10 元測試連結，自己刷一筆，確認 LINE 收到推播、試算表「付款紀錄」多一列，再於藍新退款。
 - 2026-11-04 Vercel 七個變數就緒（含 NEWEBPAY_HASH_KEY/IV、LINE_CHANNEL_ACCESS_TOKEN/SECRET、LINE_NOTIFY_TO），重新部署。
+
+## 官網故事版申請收件（2026-11-17 加）
+官網 chaozhibai.ai 的「申請免費故事版」表單，原本送到 chatgpt.site 的收件區（白白看不到）。改成送到課程站 `POST https://course.chaozhibai.ai/api/story-request`（只接受來自 chaozhibai.ai 的請求）。
+
+收到後做兩件事，任一成功就算收件：
+1. LINE 推播完整申請內容給 `LINE_NOTIFY_TO`（沿用既有環境變數，不用新設定）。
+2. 轉送 Apps Script（kind `story-request`），寫進報名試算表的「故事版申請」分頁。
+
+**試算表這一步要重新部署 Apps Script 才會生效**：把 Code.gs 的 `recordStoryRequest_`、`STORY_HEADERS`，以及 doPost 裡 `story-request` 那一行貼進 Google 專案，「部署 → 管理部署 → 編輯 → 新版本」。沒重新部署之前，只有 LINE 推播，試算表不會有資料。
+
+照片不再上傳檔案：表單只收照片連結（選填），沒附的話推播會寫「要跟對方要」。
+改用之前的舊申請留在 chatgpt.site 的收件區，沒有搬過來。
+
