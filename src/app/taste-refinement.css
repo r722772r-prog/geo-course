@@ -116,3 +116,13 @@
 .course-films-vertical .course-film-wide .course-film-copy{padding:24px 28px}
 .course-films-vertical .course-film-wide .course-film-copy h3{font-size:22px}
 @media(max-width:700px){.course-films-vertical .course-film-wide{grid-template-columns:1fr}.course-films-vertical .course-film-wide .course-film-copy{padding:16px}}
+
+/* 首屏色塊：課名與日期標籤、副標底色、條件標籤 */
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.hero-chip{display:inline-block;padding:6px 14px;border:1px solid #6b4a52;border-radius:4px;color:#f1e4e1;font-size:14px;line-height:1.6;letter-spacing:.04em}
+.hero-chip-fill{background:#ae445a;border-color:#ae445a;color:#fff;font-weight:700}
+.course-hero h1 .hero-sub{margin-top:20px;padding:14px 18px;background:#2b2023;border-left:4px solid #ae445a;border-radius:0 4px 4px 0}
+.hero-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0;max-width:680px}
+.hero-tags li{padding:6px 12px;background:#2a2626;border:1px solid #403838;border-radius:4px;color:#dedbd8;font-size:14px;line-height:1.5}
+.hero-tags .hero-tag-price{background:#f1e4e1;border-color:#f1e4e1;color:#1a1a1a;font-weight:700}
+@media(max-width:700px){.hero-chip{font-size:13px;padding:5px 12px}.course-hero h1 .hero-sub{padding:12px 14px;margin-top:16px}.hero-tags{margin-top:20px}}
