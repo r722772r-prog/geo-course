@@ -96,3 +96,23 @@
 .audience-tile p{margin:0;font-size:15px;line-height:1.8;color:#615a56}
 @media(max-width:900px){.audience-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.audience-tiles{grid-template-columns:1fr}.audience-tile{padding:16px 16px 16px 18px}.audience-tile h3{font-size:18px}}
+/* 2026-11 學員痛點版：補充說明行、小標、hero 圖說 */
+.course-section>.lead-line{margin-top:28px;max-width:42em;font-size:19px;line-height:1.9;font-weight:700;border-left:3px solid #ae445a;padding-left:18px}
+.course-section .sub-heading{margin:44px 0 0;font-size:24px;font-weight:700}
+.course-section>.course-tiles{margin-top:24px}
+
+.course-section>.lead-line+p{margin-top:28px}
+/* 團隊作品：四支直式影片 */
+.course-films.course-films-vertical{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.course-films-vertical .course-film-screen{aspect-ratio:9/16}
+.course-films-vertical .course-film-screen img,.course-films-vertical .course-film-screen video{object-fit:cover}
+.course-films-vertical .course-film-copy{padding:16px}
+.course-films-vertical .course-film-copy h3{font-size:18px;line-height:1.5;margin:0 0 8px}
+.course-film-kind{font-size:13px;font-weight:700;letter-spacing:.06em;color:#96394d;margin:0 0 6px}
+@media(max-width:900px){.course-films.course-films-vertical{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.course-films-vertical .course-film-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center}
+.course-films-vertical .course-film-wide .course-film-screen{aspect-ratio:16/9}
+.course-films-vertical .course-film-wide .course-film-copy{padding:24px 28px}
+.course-films-vertical .course-film-wide .course-film-copy h3{font-size:22px}
+@media(max-width:700px){.course-films-vertical .course-film-wide{grid-template-columns:1fr}.course-films-vertical .course-film-wide .course-film-copy{padding:16px}}
