@@ -1,4 +1,4 @@
-export const courseTitle = "AI IP 兩日班｜做出專屬你的 AI IP 帳號";
+export const courseTitle = "AI IP 兩日班｜不露臉，兩天做出你的 AI 虛擬網紅帳號";
 export const courseShortName = "AI IP 兩日班";
 // 報名表位於課程站內；資料保存成功後才提供藍新付款入口。
 export const registrationUrl = "https://course.chaozhibai.ai/#registration-form";
