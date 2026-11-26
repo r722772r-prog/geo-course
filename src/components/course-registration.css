@@ -22,3 +22,6 @@
 .registration-complete { padding: 1.5rem; border-left: 3px solid #873348; background: #f0e8e2; outline-offset: 4px; }
 .registration-complete strong { overflow-wrap: anywhere; }
 @media (max-width: 600px) { .registration-fields { grid-template-columns: minmax(0,1fr); } .registration-intro ol { display: block; } .registration-intro li { margin-block: .5rem; } .course-registration .cta { width: 100%; text-align: center; } .registration-complete { padding: 1rem; } }
+.registration-direct { margin-top: 1.25rem; padding: 1rem 1.25rem; border: 1px solid #c9b6ad; border-left: 3px solid #873348; background: #fbf7f4; line-height: 1.9; }
+.registration-direct p { margin-block: .5rem; }
+.registration-direct .cta { margin-block: .5rem; }
